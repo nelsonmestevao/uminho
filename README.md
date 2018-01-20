@@ -16,12 +16,12 @@ the course. I hope you find it useful somehow.
 ### **1st year**
 
 ##### 1st semester
-  - [Software Labs I](https://github.com/nelsonmestevao/uminho/tree/readme/1st/1/Laboratórios%20de%20Informática%20I/Project):
-This project consists of a game of cars. This has been developed in the Haskell programming language.
+  - [Software Labs I](https://github.com/nelsonmestevao/uminho/tree/master/1st/1/Laboratórios%20de%20Informática%20I/Project):
+This project consists in a game of cars. It has been developed in the Haskell programming language.
 
 ##### 2nd semester
   - [Software Labs II]():
-
+<!--
 ### **2nd year**
 ##### 1st semester
   - []()
@@ -50,13 +50,13 @@ This project consists of a game of cars. This has been developed in the Haskell 
 
 ## Contributors
 
-[![Nelson Estevão](https://github.com/nelsonmestevao.png?size=100)][nelson] | [![Pedro Ribeiro](https://github.com/nelsonmestevao.png?size=100)][pedro] | [![Rui Mendes](https://github.com/nelsonmestevao.png?size=100)][rui]
+[![Nelson Estevão](https://github.com/nelsonmestevao.png?size=120)][nelson] | [![Pedro Ribeiro](https://github.com/nelsonmestevao.png?size=120)][pedro] | [![Rui Mendes](https://github.com/ruimendes29.png?size=120)][rui]
 :---: | :---: | :---:
 [Nelson Estevão][nelson] | [Pedro Ribeiro][pedro] | [Rui Mendes][rui]
 
 [nelson]: https://github.com/nelsonmestevao
 [pedro]: https://github.com/nelsonmestevao
-[rui]: https://github.com/nelsonmestevao
+[rui]: https://github.com/ruimendes29
 
 <div align="center">
 <sub>2017 - PRESENT</sub>
