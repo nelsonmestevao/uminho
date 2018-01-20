@@ -32,12 +32,12 @@ respectivamente.
 
 ## Team
 
-[![Nelson Estevão](https://github.com/nelsonmestevao.png?size=120)][nelson] | [![Pedro Ribeiro](https://github.com/nelsonmestevao.png?size=120)][pedro]
+[![Nelson Estevão](https://github.com/nelsonmestevao.png?size=120)][nelson] | [![Pedro Ribeiro](https://github.com/pedroribeiro22.png?size=120)][pedro]
 :---: | :---:
 [Nelson Estevão][nelson] | [Pedro Ribeiro][pedro]
 
 [nelson]: https://github.com/nelsonmestevao
-[pedro]:  https://github.com/nelsonmestevao
+[pedro]:  https://github.com/pedroribeiro22
 
 <div align="center">
 <sub>October 2017 - December 2017</sub>
