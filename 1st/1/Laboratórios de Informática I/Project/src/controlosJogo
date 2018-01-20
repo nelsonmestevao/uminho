@@ -1,0 +1,16 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------- CONTROLOS DO JOGO -----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DENTRO DO MENU:
+  - usar "1","2","3" para escolher o respetivo modo de jogo 
+
+SE ESCOLHEU O MODO 1:
+  - usar "Left Arrow","Right Arrow","Up Arrow","Down Arrow" para controlar o jogador 1 ("1" e "2" para usar nitro) 
+  - usar "A","D","W","S" para controlar o jogador 2 ("8" e "9" para usar nitro)
+
+SE ESCOLHEU O MODO 2:
+ - usar "Left Arrow","Right Arrow","Up Arrow","Down Arrow" para controlar o jogador 1 ("1" e "2" para usar nitro)
+
+SE ESCOLHEU CREDITOS:
+ - usar "Enter" para voltar ao menu principal 
