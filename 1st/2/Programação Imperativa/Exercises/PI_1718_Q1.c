@@ -200,7 +200,7 @@ void strnoV (char t[]){
     Exercício 13
    -------------------------------------------------------------------------- */
 
-void truncW (char t[], int n){
+void truncW (char t[], int n) {
   int i=0, a=0, contador=0;
 
   while (t[i]!='\0')
@@ -223,11 +223,58 @@ void truncW (char t[], int n){
     Exercício 14
    -------------------------------------------------------------------------- */
 
+int contaChar (char s [], char a) {
+  int i,count=0;
+  for (i=0; s[i]!='\0'; i++)
+  {
+    if (s[i]==a)
+      count ++;
+  }
+  return count;
+}
 
+char charMaisfreq (char s[]) {
+  int i,nmax=0;
+  char max;
+  for (i=0; s[i]!='\0'; i++)
+  {
+    if (nmax < contaChar (s,s[i]))
+    {
+      nmax = contaChar (s,s[i]);
+      max = s[i];
+    }
+  }
+  if (s[0]=='\0')
+  max ='\0';
+    return max;
+}
 
 /* --------------------------------------------------------------------------
     Exercício 15
    -------------------------------------------------------------------------- */
+
+int iguaisConsecutivos (char s[]) {
+    int i, n=0, max=0;
+    char last = '\0';
+
+    for(i=0; s[i]!='\0'; i++)
+    {
+        if (last==s[i])
+            n++;
+        else {
+          last = s[i];
+          if (n>max)
+            max = n;
+          n=1;
+       }
+    }
+
+    if (n>max)
+        max = n;
+
+    return max;
+}
+
 /* --------------------------------------------------------------------------
     Exercício 16
    -------------------------------------------------------------------------- */
