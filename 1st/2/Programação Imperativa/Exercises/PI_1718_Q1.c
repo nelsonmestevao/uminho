@@ -10,17 +10,17 @@
 
 void leMaior ()
 {
-  int leitura;
-  int maior = 0;
+    int leitura;
+    int maior;
 
-  do {
     scanf ("%d",&leitura);
-    maior = (leitura>maior) ? leitura : maior;
-    if (leitura == 0)
-      {
-        printf("%d\n", maior);
-      }
-  } while (leitura != 0);
+
+    do {
+        scanf ("%d",&leitura);
+        maior = (leitura>maior) ? leitura : maior;
+        if (leitura == 0)
+            printf("%d\n", maior);
+    } while (leitura != 0);
 }
 
 /* --------------------------------------------------------------------------
@@ -48,6 +48,20 @@ void fazMedia ()
 /* --------------------------------------------------------------------------
     Exercício 3
    -------------------------------------------------------------------------- */
+
+void le2Maior () {
+    int maior = 0, maior2 = 0, leitura;
+    do {
+        scanf ("%d",&leitura);
+        if (leitura > maior2 && leitura < maior) maior2 = leitura;
+        else if (leitura > maior) {
+            maior2 = maior;
+            maior = leitura;
+        }
+        if (leitura == 0)
+            printf("%d\n", maior2);
+    } while (leitura != 0);
+}
 
 /* --------------------------------------------------------------------------
     Exercício 4
@@ -331,5 +345,6 @@ int main ()
 {
 //  leMaior();
 //  fazMedia();
+  le2Maior();
   return 0;
 }
