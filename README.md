@@ -8,8 +8,8 @@
   </h2>
 </div>
 
-This repository contains my class notes as well as the projects I developed during
-the course. I hope you find it useful somehow.
+This repository contains my class notes as well as the projects I developed
+during the course. I hope you find it useful somehow.
 
 ## List of Projects
 
@@ -17,7 +17,8 @@ the course. I hope you find it useful somehow.
 
 ##### 1st semester
   - [Software Labs I](/1st/1/Laboratórios%20de%20Informática%20I/Project):
-This project consists in a game of cars. It has been developed in the Haskell programming language.
+This project consists in a game of cars. It has been developed in the Haskell
+programming language.
 
 ##### 2nd semester
   - [Software Labs II]():
