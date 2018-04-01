@@ -1,10 +1,26 @@
 {
-    "gitbook": "3.x.x",
-    "plugins": ["katex"],
+    "title": "Notes on Computer Engineering",
+    "author": "Nelson Estevão",
+    "plugins": ["katex","autocover"],
     "links": {
         "sidebar": {
             "Contact me": "mailto:hello@estevao.xyz"
         }
     },
-    "pluginsConfig": {}
+    "pluginsConfig": {
+      "autocover": {
+        "font":{
+          "size": null,
+          "family": "Impact",
+          "color": "#FFF"
+        },
+        "size": {
+          "w": 1800,
+          "h": 2360
+        },
+        "background":{
+          "color": "#09F"
+        }
+      }
+    }
 }
