@@ -1,5 +1,6 @@
 {
-    "title": "Computer Engineering Notes",
+    "title": "Software Engineering Notes",
+    "description": "Class Notes on Software Engineering",
     "author": "Nelson Estevão",
     "plugins": ["katex","autocover"],
     "links": {
