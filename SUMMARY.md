@@ -4,7 +4,7 @@
 
 * [About this Book](README.md)
 
----
+----
 
 ## 1º Ano
 
@@ -29,15 +29,15 @@
   5. [Relações Binárias](/1st/1/Tópicos de Matemática Discreta/Notes/5. Relações Binárias.md)
   6. [Grafos](/1st/1/Tópicos de Matemática Discreta/Notes/6. Grafos.md)
 
----
+----
 
 ## 2º Ano
 
----
+----
 
 ## 3º Ano
 
----
+----
 
 # Acknowledgments
 
