@@ -1,5 +1,5 @@
 {
-    "title": "Notes on Computer Engineering",
+    "title": "Computer Engineering Notes",
     "author": "Nelson Estevão",
     "plugins": ["katex","autocover"],
     "links": {
