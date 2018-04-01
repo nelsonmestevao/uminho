@@ -1,3 +1,5 @@
+[gitbook]: https://nelsonmestevao.gitbooks.io/uminho/
+
 <div align="center">
   <img src="https://www.eng.uminho.pt/SiteAssets/Logo.PNG" alt="University of Minho">
   <br>
@@ -9,7 +11,8 @@
 </div>
 
 This repository contains my class notes as well as the projects I developed
-during the course. I hope you find it useful somehow.
+during my degree. You can read all my notes [here][gitbook]. I hope you find it
+useful somehow.
 
 ## List of Projects
 
@@ -21,7 +24,8 @@ This project consists in a game of cars. It has been developed in the Haskell
 programming language.
 
 ##### 2nd semester
-  - [Software Labs II]():
+  - [Software Labs II](/1st/2/Laboratórios%20de%20Informática%20II/Project):
+
 <!--
 ### **2nd year**
 ##### 1st semester
@@ -63,7 +67,6 @@ programming language.
 
 [rui]: https://github.com/ruimendes29
 [rui-pic]: https://github.com/ruimendes29.png?size=120
-
 
 <div align="center">
 <sub>2017 - PRESENT</sub>

@@ -38,3 +38,7 @@
 ## 3º Ano
 
 ---
+
+# Acknowledgments
+
+* [Contributors](https://github.com/nelsonmestevao/uminho/graphs/contributors)
