@@ -1,8 +1,9 @@
 # Summary
 
-# Getting Started
+## Getting Started
 
 * [About this Book](README.md)
+* [Contributing](https://github.com/nelsonmestevao/uminho/CONTRIBUTING.md)
 
 ----
 
@@ -36,9 +37,3 @@
 ----
 
 ## 3º Ano
-
-----
-
-# Acknowledgments
-
-* [Contributors](https://github.com/nelsonmestevao/uminho/graphs/contributors)

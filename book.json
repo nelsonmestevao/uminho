@@ -5,7 +5,8 @@
     "plugins": ["katex","autocover"],
     "links": {
         "sidebar": {
-            "Contact me": "mailto:hello@estevao.xyz"
+            "Repository": "https://github.com/nelsonmestevao/uminho",
+            "Contributors": "https://github.com/nelsonmestevao/uminho/graphs/contributors"
         }
     },
     "pluginsConfig": {
