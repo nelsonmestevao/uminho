@@ -1,0 +1,10 @@
+{
+    "gitbook": "3.x.x",
+    "plugins": ["katex"],
+    "links": {
+        "sidebar": {
+            "Contact me": "mailto:hello@estevao.xyz"
+        }
+    },
+    "pluginsConfig": {}
+}
