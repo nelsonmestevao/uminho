@@ -562,7 +562,27 @@ int retiraNeg (int v[], int N){
     Exercício 30
    -------------------------------------------------------------------------- */
 
-
+int menosFreq (int v[], int N){
+    int lowNumb=v[0],r=16384,count=1,i,last=v[0];
+    for (i = 1; i <= N; ++i)
+    {
+        if (last ==v[i])
+            count++;
+        else if (count < r)
+        {
+            lowNumb=v[i-1];
+            r=count;
+            last = v[i];
+            count=1;
+        }
+        else if (last !=v[i])
+        {
+            last = v[i];
+            count=1;
+        }
+    }
+    return lowNumb;
+}
 
 /* --------------------------------------------------------------------------
     Exercício 31
