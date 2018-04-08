@@ -16,7 +16,7 @@ useful somehow.
 
 ## List of Projects
 
-#### **1st year**
+### **1st year**
 
 ##### 1st semester
   - [Software Labs I](/1st/1/Laboratórios%20de%20Informática%20I/Project):
