@@ -2,27 +2,11 @@
     "title": "Software Engineering Notes",
     "description": "Class Notes on Software Engineering",
     "author": "Nelson Estevão",
-    "plugins": ["katex","autocover"],
+    "plugins": ["katex"],
     "links": {
         "sidebar": {
             "Repository": "https://github.com/nelsonmestevao/uminho",
-            "Contributors": "https://github.com/nelsonmestevao/uminho/graphs/contributors"
+            "Contributors": "https://github.com/nelsonmestevao/uminho/contributors"
         }
-    },
-    "pluginsConfig": {
-      "autocover": {
-        "font":{
-          "size": null,
-          "family": "Impact",
-          "color": "#FFF"
-        },
-        "size": {
-          "w": 1800,
-          "h": 2360
-        },
-        "background":{
-          "color": "#09F"
-        }
-      }
     }
 }
