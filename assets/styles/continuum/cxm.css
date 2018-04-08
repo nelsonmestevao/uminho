@@ -1,0 +1,25 @@
+/* 
+  base 
+  rgb(84, 185, 169)
+
+  dark
+  rgb(69, 154, 140)
+*/
+
+@import 'base.css';
+
+.book .book-summary {
+  background-color: rgb(84, 185, 169);
+  box-shadow: inset -4px 0 0 rgb(69, 154, 140);
+}
+
+.book .book-summary ul.summary {
+  background-color: rgb(84, 185, 169);
+  background-image: url(logo-cxm-white.png);
+  box-shadow: inset -4px 0 0 rgb(69, 154, 140);
+}
+
+.book .book-summary ul.summary li a:hover,
+.book .book-summary ul.summary li.active a {
+  background-color: rgb(69, 154, 140);
+}

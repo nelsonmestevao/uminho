@@ -1,0 +1,25 @@
+/* 
+  base 
+  rgb(220, 81, 114)
+
+  dark
+  rgb(183, 67, 95)
+*/
+
+@import 'base.css';
+
+.book .book-summary {
+  background-color: rgb(220, 81, 114);
+  box-shadow: inset -4px 0 0 rgb(183, 67, 95);
+}
+
+.book .book-summary ul.summary {
+  background-color: rgb(220, 81, 114);
+  background-image: url(logo-cms-white.png);
+  box-shadow: inset -4px 0 0 rgb(183, 67, 95);
+}
+
+.book .book-summary ul.summary li a:hover,
+.book .book-summary ul.summary li.active a {
+  background-color: rgb(183, 67, 95);
+}

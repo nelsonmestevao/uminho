@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nelsonmestevao/uminho#readme",
   "dependencies": {
-    "gitbook-cli": "^2.3.2"
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-theme-gestalt": "^1.0.7"
   }
 }
