@@ -18,12 +18,12 @@ useful somehow.
 
 ### **1st year**
 
-##### 1st semester
+* ##### 1st semester
   - [Software Labs I](/1st/1/Laboratórios%20de%20Informática%20I/Project):
 This project consists in a game of cars. It has been developed in the Haskell
 programming language.
 
-##### 2nd semester
+* ##### 2nd semester
   - [Software Labs II](/1st/2/Laboratórios%20de%20Informática%20II/Project):
 
 <!--
