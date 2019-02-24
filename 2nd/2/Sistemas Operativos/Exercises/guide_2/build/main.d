@@ -13,7 +13,11 @@ main.o: src/main.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/stdio.h /usr/include/stdlib.h \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+<<<<<<< HEAD
  /usr/include/string.h /usr/include/unistd.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/confname.h \
  /usr/include/sys/wait.h /usr/include/bits/waitflags.h \
  /usr/include/bits/waitstatus.h src/coiso.h
+=======
+ /usr/include/string.h
+>>>>>>> 518b9d9... [A1S1]: Add notes and projects

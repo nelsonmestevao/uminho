@@ -1,0 +1,6 @@
+[submodule "Laboratórios de Informática I: Report Project"]
+  path = 1st/1/Laboratórios de Informática I/Project/report
+  url = git@gitlab.com:mieiuminho/LI1/report.git
+[submodule "Laboratórios de Informática I: Micro Machines"]
+  path = 1st/1/Laboratórios de Informática I/Project/micro-machines
+  url = git@gitlab.com:mieiuminho/LI1/micro-machines.git
