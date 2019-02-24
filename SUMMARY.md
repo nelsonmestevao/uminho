@@ -46,7 +46,7 @@
 * [Comunicação de Dados](/2nd/1/Comunicação de Dados/§ Comunicação de Dados.md)
 * [Estatística Aplicada](/2nd/1/Estatística Aplicada/§ Estatística Aplicada.md)
 * [Introdução aos Sistemas Dinâmicos](/2nd/1/Introdução aos Sistemas Dinâmicos/§ Introdução aos Sistemas Dinâmicos.md)
-* [Cáculo de Programas](/2nd/2/Cálculo de Programas/§ Cálculo de Programas.md)
+* [Cálculo de Programas](/2nd/2/Cálculo de Programas/§ Cálculo de Programas.md)
 * [Eletromagnetismo](/2nd/2/Eletromagnetismo/§ Eletromagnetismo.md)
 * [Laboratórios de Informática III](/2nd/2/Laboratórios de Informática III/§ Laboratórios de Informática III.md)
 * [Programação Orientada aos Objectos](/2nd/2/Programação Orientada aos Objetos/§ Programação Orientada aos Objetos.md)
