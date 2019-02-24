@@ -31,6 +31,7 @@
   6. [Grafos](/1st/1/Tópicos de Matemática Discreta/Notes/6. Grafos.md)
 * [Análise](/1st/2/Análise/§ Análise.md)
 * [Laboratórios de Informática II](/1st/2/Laboratórios de Informática II/§ Laboratórios de Informática II.md)
+  1. [Tic-Tac-Logic](/1st/2/Laboratórios de Informática II/Project/README.md)
 * [Lógica](/1st/2/Lógica/§ Lógica.md)
 * [Programação Imperativa](/1st/2/Programação Imperativa/§ Programação Imperativa.md)
 * [Sistemas de Computação](/1st/2/Sistemas de Computação/§ Sistemas de Computação.md)
