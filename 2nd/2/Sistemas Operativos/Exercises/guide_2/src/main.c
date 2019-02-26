@@ -1,22 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 /**
  * Importante
  * @param argc quantos argumentos
  * */
 int main(int argc, char **argv) {
+    pid_t pid;
 
-    if (argc < 1) {
-        printf("Unexpected number of arguments\n");
-        return -1;
-    }
-
-    printf("You entered in reverse order:\n\n");
-
-    while (argc--) {
-        printf("* %s\n", argv[argc]);
+    if ((pid = fork()) == 0) {
+        printf("Este é o processo filho: L1\n");
+        printf("Indentificador do processo L1:\t%d\n",       getpid());
+        printf("Identificador do pai do processo L1:\t%d\n", getppid());
+    } else {
+        printf("Este é o processo pai: L0\n");
+        printf("Indentificador do processo L0:\t%d\n",       getpid());
+        printf("Identificador do pai do processo L0:\t%d\n", getppid());
     }
 
     return 0;
