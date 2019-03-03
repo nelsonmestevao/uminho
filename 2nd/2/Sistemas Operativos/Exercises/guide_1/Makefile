@@ -1,27 +1,59 @@
-CC         = gcc
-CFLAGS     = -std=c11 -O2 -Wall -Wextra -pedantic -g
-OBJS       = $(patsubst %.c,%.o,$(wildcard $(SRCDIR)*.c))
-SRCDIR     = src/
-LIBDIR     = lib/
-DOCDIR     = docs/
-PROGRAM    = guide1
+CC      = gcc
+LD      = gcc
+CFLAGS  = -O2 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -pedantic -g
+BIN_DIR = bin
+SRC_DIR = src
+DOC_DIR = docs
+BLD_DIR = build
+SRC     = $(wildcard $(SRC_DIR)/*.c)
+OBJS    = $(patsubst $(SRC_DIR)/%.c,$(BLD_DIR)/%.o,$(SRC))
+DEPS    = $(patsubst $(BLD_DIR)/%.o,$(BLD_DIR)/%.d,$(OBJS))
+PROGRAM = guide1
 
-$(PROGRAM): $(OBJS)
-	$(CC) -o $(PROGRAM) $(OBJS)
+vpath %.c $(SRC_DIR)
 
-run:
-	@./$(PROGRAM) $(input)
+.DEFAULT_GOAL = build
+
+.PHONY: build run fmt lint leak-check doc checkdirs clean
+
+$(BLD_DIR)/%.d: %.c
+	$(CC) -M $(CFLAGS) $(INCLUDES) $< -o $@
+
+$(BLD_DIR)/%.o: %.c
+	$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+
+$(BIN_DIR)/$(PROGRAM): $(DEPS) $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $(OBJS)
+
+build: checkdirs $(BIN_DIR)/$(PROGRAM)
+
+run: build
+	@./$(BIN_DIR)/$(PROGRAM)
 
 fmt:
-	@astyle --style=google -nr *.c,*.h
+	@uncrustify -c .uncrustify --no-backup $(SRC_DIR)/*.c $(SRC_DIR)/*.h
+
+lint:
+	@splint -retvalint -I $(SRC_DIR)/*.c $(SRC_DIR)/*.h
+
+leak-check: $(BIN_DIR)/$(PROGRAM)
+	@valgrind --vgdb=no --tool=memcheck --leak-check=yes ./$(BIN_DIR)/$(PROGRAM) $(input)
 
 doc:
-	@doxygen $(DOCDIR)/Doxyfile
+	@doxygen $(DOC_DIR)/Doxyfile
+
+test:
+	@cd tests && ./sample_data.sh
+
+checkdirs:
+	@mkdir -p $(BLD_DIR)
+	@mkdir -p $(BIN_DIR)
+	@mkdir -p $(DOC_DIR)
 
 clean:
 	@echo "Cleaning..."
 	@echo ""
-	@cat .art/maid.ascii
-	@rm -rf $(SRCDIR)*.o $(PROGRAM) $(DOCDIR)/html $(DOCDIR)/latex
+	@-cat .art/maid.ascii
+	@-rm -rd $(BLD_DIR)/* $(BIN_DIR)/* $(DOC_DIR)/html $(DOC_DIR)/latex
 	@echo ""
 	@echo "...✓ done!"
