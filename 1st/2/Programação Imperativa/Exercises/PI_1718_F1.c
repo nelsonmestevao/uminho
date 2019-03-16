@@ -19,16 +19,16 @@ int quadrado(int n) {
     for (int j = 0; j < n; j++) {
       putchar('#');
     }
-  putchar('\n');
+    putchar('\n');
   }
   return 0;
 }
 
 // Exercício 3
-int xadrez(int n){
+int xadrez(int n) {
   for (int j = 0; j < n; j++) {
     for (int i = 0; i < n; i++) {
-      if ((j+i)%2==0) {
+      if ((j + i) % 2 == 0) {
         putchar('#');
       } else {
         putchar('_');
@@ -40,7 +40,6 @@ int xadrez(int n){
 }
 
 int main() {
-
   xadrez(5);
 
   return 0;

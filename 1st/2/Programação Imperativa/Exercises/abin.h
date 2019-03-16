@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 typedef struct nodo {
-    int valor;
-    struct nodo *esq, *dir;
-} *ABin;
+  int valor;
+  struct nodo *esq, *dir;
+} * ABin;
 
-ABin newABin (int v, ABin e, ABin d);
+ABin newABin(int v, ABin e, ABin d);
