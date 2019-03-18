@@ -4,6 +4,8 @@ CFLAGS  = -O2 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-unus
 BIN_DIR = bin
 BLD_DIR = build
 DOC_DIR = docs
+LOG_DIR = log
+OUT_DIR = out
 SRC_DIR = src
 TST_DIR = tests
 SRC     = $(wildcard $(SRC_DIR)/*.c)
@@ -15,7 +17,7 @@ vpath %.c $(SRC_DIR)
 
 .DEFAULT_GOAL = build
 
-.PHONY: build run fmt lint leak-check doc checkdirs clean
+.PHONY: build run fmt lint check doc test checkdirs clean
 
 $(BLD_DIR)/%.d: %.c
 	$(CC) -M $(CFLAGS) $(INCLUDES) $< -o $@
@@ -32,32 +34,40 @@ run: build
 	@./$(BIN_DIR)/$(PROGRAM)
 
 fmt:
-	@echo "C files:"
-	@-uncrustify -c .uncrustify --no-backup $(SRC_DIR)/*.c $(SRC_DIR)/*.h
+	@echo "C and Headers files:"
+	@-clang-format -verbose -style="{BasedOnStyle: Google, IndentWidth: 4}" -i $(SRC_DIR)/*.c $(SRC_DIR)/*.h
 	@echo "Shell files:"
-	@shfmt -l -w -i 2 .
+	@-shfmt -l -s -w -i 2 .
 
 lint:
-	@splint -retvalint -I $(SRC_DIR)/*.c $(SRC_DIR)/*.h
+	@splint -retvalint -hints -strict -I $(SRC_DIR)/*.c $(SRC_DIR)/*.h
 
-leak-check: $(BIN_DIR)/$(PROGRAM)
-	@valgrind --vgdb=no --tool=memcheck --leak-check=yes ./$(BIN_DIR)/$(PROGRAM) $(input)
+check: LOG = $(LOG_DIR)/`date +%Y-%m-%d_%H:%M:%S`
+check: CFLAGS += -pg
+check: build
+	@memusage --data=$(LOG).dat --png=$(LOG).png $(BIN_DIR)/$(PROGRAM)
+	@gprof $(BIN_DIR)/$(PROGRAM) gmon.out > $(LOG).txt
+	@valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all \
+		--log-file=$(LOG).log $(MAKE) test
 
 doc:
 	@doxygen $(DOC_DIR)/Doxyfile
 
 test:
-	@cd tests && ./generate_people.sh
+	@cd $(TST_DIR)/ && /bin/bash generate_people.sh
 
 checkdirs:
 	@mkdir -p $(BLD_DIR)
 	@mkdir -p $(BIN_DIR)
 	@mkdir -p $(DOC_DIR)
+	@mkdir -p $(LOG_DIR)
+	@mkdir -p $(OUT_DIR)
 
 clean:
 	@echo "Cleaning..."
 	@echo ""
-	@-cat .art/maid.ascii
-	@-rm -rd $(BLD_DIR)/* $(BIN_DIR)/* $(DOC_DIR)/html $(DOC_DIR)/latex
+	@-rm -rd $(BLD_DIR)/* $(BIN_DIR)/* $(OUT_DIR)/* $(LOG_DIR)/* \
+		$(DOC_DIR)/html $(DOC_DIR)/latex
 	@echo ""
 	@echo "...✓ done!"
+
