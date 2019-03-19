@@ -1,17 +1,17 @@
-CC      = gcc
-LD      = gcc
-CFLAGS  = -O2 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -pedantic -g
-BIN_DIR = bin
-BLD_DIR = build
-DOC_DIR = docs
-LOG_DIR = log
-OUT_DIR = out
-SRC_DIR = src
-TST_DIR = tests
-SRC     = $(wildcard $(SRC_DIR)/*.c)
-OBJS    = $(patsubst $(SRC_DIR)/%.c,$(BLD_DIR)/%.o,$(SRC))
-DEPS    = $(patsubst $(BLD_DIR)/%.o,$(BLD_DIR)/%.d,$(OBJS))
-PROGRAM = program
+CC       = gcc
+LD       = gcc
+CFLAGS   = -O2 -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -pedantic -g
+BIN_DIR  = bin
+BLD_DIR  = build
+DOC_DIR  = docs
+LOG_DIR  = log
+OUT_DIR  = out
+SRC_DIR  = src
+TST_DIR  = tests
+SRCS     = $(wildcard $(SRC_DIR)/*.c)
+OBJS     = $(patsubst $(SRC_DIR)/%.c,$(BLD_DIR)/%.o,$(SRCS))
+DEPS     = $(patsubst $(BLD_DIR)/%.o,$(BLD_DIR)/%.d,$(OBJS))
+PROGRAMS = $(addprefix $(BIN_DIR)/, $(notdir $(OBJS:.o=)))
 
 vpath %.c $(SRC_DIR)
 
@@ -25,13 +25,13 @@ $(BLD_DIR)/%.d: %.c
 $(BLD_DIR)/%.o: %.c
 	$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
 
-$(BIN_DIR)/$(PROGRAM): $(DEPS) $(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $(OBJS)
+$(BIN_DIR)/%: $(BLD_DIR)/%.o
+	$(CC) $(CFLAGS) $(INCLUDES) $< -o $@
+	@echo ""
 
-build: checkdirs $(BIN_DIR)/$(PROGRAM)
+build: checkdirs $(PROGRAMS)
 
 run: build
-	@./$(BIN_DIR)/$(PROGRAM)
 
 fmt:
 	@echo "C and Headers files:"
@@ -40,13 +40,11 @@ fmt:
 	@shfmt -l -w -i 2 .
 
 lint:
-	@splint -retvalint -hints -strict -I $(SRC_DIR)/*.c $(SRC_DIR)/*.h
+	@splint -retvalint -hints -I $(SRC_DIR)/*.c
 
 check: LOG = $(LOG_DIR)/`date +%Y-%m-%d_%H:%M:%S`
-check: CFLAGS += -pg
 check: build
 	@memusage --data=$(LOG).dat --png=$(LOG).png $(BIN_DIR)/$(PROGRAM)
-	@gprof $(BIN_DIR)/$(PROGRAM) gmon.out > $(LOG).txt
 	@valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all \
 		--log-file=$(LOG).log ./$(BIN_DIR)/$(PROGRAM)
 
