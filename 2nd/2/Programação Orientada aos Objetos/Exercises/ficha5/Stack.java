@@ -31,7 +31,7 @@ public class Stack {
     }
 
     public void push(String s) {
-        this.stack.add(0,s);
+        this.stack.add(0, s);
     }
 
     public void pop() {
