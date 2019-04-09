@@ -1,3 +1,5 @@
+package ficha3;
+
 import java.time.LocalDate;
 
 public class Lampada {

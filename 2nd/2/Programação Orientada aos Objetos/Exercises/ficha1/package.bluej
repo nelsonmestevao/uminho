@@ -1,0 +1,27 @@
+#BlueJ package file
+objectbench.height=177
+objectbench.width=909
+package.divider.horizontal=0.6
+package.divider.vertical=0.7997823721436343
+package.editor.height=728
+package.editor.width=803
+package.editor.x=20
+package.editor.y=24
+package.frame.height=1009
+package.frame.width=935
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+readme.height=58
+readme.name=@README
+readme.width=47
+readme.x=10
+readme.y=10
+target1.height=50
+target1.name=Ficha1
+target1.showInterface=false
+target1.type=ClassTarget
+target1.width=80
+target1.x=180
+target1.y=10

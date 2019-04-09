@@ -1,3 +1,5 @@
+package ficha5;
+
 import java.util.stream.Collectors;
 
 public class FBFeed {
