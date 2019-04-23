@@ -1,11 +1,10 @@
 #!/bin/bash
 
-. nomes.sh
+. tests/nomes.sh
 
-for i in {1..10}; do
+for i in {1..1000}; do
   nome=$((RANDOM % ${#NOMES[@]}))
   apelido=$((RANDOM % ${#APELIDOS[@]}))
   idade=$((RANDOM % 100 + 1))
-  # echo "\"${NOMES[nome]} ${APELIDOS[apelido]}\" $idade"
-  ./../bin/pessoas "${NOMES[nome]} ${APELIDOS[apelido]}" $idade
+  ./bin/pessoas -i "${NOMES[nome]} ${APELIDOS[apelido]}" $idade
 done

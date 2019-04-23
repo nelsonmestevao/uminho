@@ -1,41 +1,34 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 
 #include "person.h"
 
-void appendPerson(const char *path, Person new) {
-    int fd = open(path, O_CREAT | O_TRUNC | O_WRONLY, 0777);
+#define PATH_DATABASE "out/people.bin"
 
-    write(fd, &new, sizeof(Person));
-
-    close(fd);
+void write_person(int fd, Person *p) {
+  lseek(fd, 0, SEEK_END);
+  write(fd, p->name, sizeof(char) * strlen(p->name));
+  write(fd, &(p->age), sizeof(int));
 }
 
 int main(int argc, char **argv) {
-    if (argc == 3) {
-        Person dada = new_person(argv[1], atoi(argv[2]));
-        printf("Nome: %s\n",  dada.name);
-        printf("Idade: %d\n", dada.age);
+  int fd = open(PATH_DATABASE, O_CREAT | O_RDWR, 0666);
 
-        appendPerson("out/people.bin", dada);
-    } else {
-        Person andre = new_person("Andre", 20);
+  if (argv[1] != NULL && strcmp(argv[1], "-i") == 0) {
+    Person p = new_person(argv[2], atoi(argv[3]));
+    write_person(fd, &p);
+  } else if (strcmp(argv[1], "-c") == 0) {
+    int i;
 
-        printf("Idade anterior André %d\n", andre.age);
-        person_change_age(&andre, 30);
-        printf("Idade modificada André %d\n", andre.age);
+    read(fd, &i, sizeof(int));
 
-        Person new_andre = clone_person(&andre);
+    printf("Idade do primeiro: %d\n", i);
+  }
 
-        printf("Idade anterior André %d\n", andre.age);
-        person_change_age(&andre, 30);
-        printf("Idade modificada André %d\n", andre.age);
+  close(fd);
 
-        destroy_person(&new_andre);
-        destroy_person(&andre);
-    }
-
-    return 0;
+  return 0;
 }

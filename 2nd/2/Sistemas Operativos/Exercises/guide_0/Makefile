@@ -54,7 +54,7 @@ doc:
 	@doxygen $(DOC_DIR)/Doxyfile
 
 test:
-	@cd $(TST_DIR)/ && /bin/bash generate_people.sh
+	@./$(TST_DIR)/generate-people.sh
 
 checkdirs:
 	@mkdir -p $(BLD_DIR)
