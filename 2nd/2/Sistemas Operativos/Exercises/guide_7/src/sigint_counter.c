@@ -19,6 +19,11 @@ void handler_sigquit(int signum) {
     exit(0);
 }
 
+void handler_sigalrm(int signum) {
+    time_passed++;
+    alarm(1);
+}
+
 int main(int argc, const char* argv[]) {
 
   if (signal(SIGINT, handler_sigint) == SIG_ERR) {
@@ -26,6 +31,10 @@ int main(int argc, const char* argv[]) {
   }
 
   if (signal(SIGQUIT, handler_sigquit) == SIG_ERR) {
+    perror("SIGOUT failed");
+  }
+
+  if (signal(SIGALRM, handler_sigalrm) == SIG_ERR) {
     perror("SIGOUT failed");
   }
 
