@@ -2,8 +2,8 @@
 #include <unistd.h>
 
 int main(int argc, char **argv) {
-  execl("/bin/ls", "ls++", "--color=always", "-l", NULL);
+    execl("/bin/ls", "ls++", "--color=always", "-l", NULL);
 
-  printf("Didn't work\n");
-  return 1;
+    printf("Didn't work\n");
+    return 1;
 }
