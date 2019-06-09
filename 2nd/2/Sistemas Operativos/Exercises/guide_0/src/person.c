@@ -5,17 +5,17 @@
 #include "person.h"
 
 Person new_person(char *name, int age) {
-  return (Person){
-      .name = strdup(name),
-      .age = age,
-  };
+    return (Person){
+        .name = strdup(name),
+        .age = age,
+    };
 }
 
 Person clone_person(Person *p) {
-  return (Person){
-      .name = strdup(p->name),
-      .age = p->age,
-  };
+    return (Person){
+        .name = strdup(p->name),
+        .age = p->age,
+    };
 }
 
 void destroy_person(Person *p) { free(p->name); }

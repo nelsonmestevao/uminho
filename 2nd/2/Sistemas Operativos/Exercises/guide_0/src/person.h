@@ -2,8 +2,8 @@
 #define _PERSON_H_
 
 typedef struct person {
-  char *name;
-  int age;
+    char *name;
+    int age;
 } Person;
 
 Person new_person(char *name, int age);
