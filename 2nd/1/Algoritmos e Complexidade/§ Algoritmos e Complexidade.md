@@ -1,6 +1,5 @@
 # 📗 Algoritmos e Complexidade
 
-
 #### Programa sucinto
 
 1. Introdução à análise de correção de algoritmos: pré- e pós-condições, invariantes de ciclo, condições de verificação.

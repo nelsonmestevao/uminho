@@ -1,6 +1,7 @@
 # 📒 Estatística Aplicada
 
 #### Programa sucinto
+
 1. População e amostra. Tipos de dados e escalas de medida. Estatística descritiva.
 2. Conceitos de probabilidade.
 3. Variáveis aleatórias e distribuições de probabilidade univariadas. Esperança matemática.
