@@ -29,6 +29,13 @@ programming language.
 This project is a board game build in C. It also contains a program able to
 generate boards with only one solution.
 
+### **2nd year**
+
+* ##### 2nd semester
+  - [Software Labs III](/2nd/2/Laboratórios%20de%20Informática%20III/Project):
+This project was a Sales Management System for Hypermarkets with branches
+done twice in C and JAVA.
+
 ## Clone
 
 If you want to clone the repository alongside with all project just do it like

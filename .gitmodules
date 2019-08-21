@@ -13,3 +13,15 @@
 [submodule "Laboratórios de Informática II: Tic Tac Logic Puzzles"]
   path = 1st/2/Laboratórios de Informática II/Project/tic-tac-logic-puzzles
   url = git@gitlab.com:mieiuminho/LI2/tic-tac-logic-puzzles.git
+[submodule "Laboratórios de Informática III: Report for JAVA Project"]
+  path = 2nd/2/Laboratórios de Informática III/Project/report-java
+  url = git@gitlab.com:mieiuminho/LI3/report-java.git
+[submodule "Laboratórios de Informática III: Report for C Project"]
+  path = 2nd/2/Laboratórios de Informática III/Project/report-c
+  url = git@gitlab.com:mieiuminho/LI3/report-c.git
+[submodule "Laboratórios de Informática III: C Project"]
+  path = 2nd/2/Laboratórios de Informática III/Project/sgv
+  url = git@gitlab.com:mieiuminho/LI3/sgv.git
+[submodule "Laboratórios de Informática III: JAVA Project"]
+  path = 2nd/2/Laboratórios de Informática III/Project/sjv
+  url = git@gitlab.com:mieiuminho/LI3/sjv.git

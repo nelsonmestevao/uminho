@@ -49,6 +49,7 @@
 * [Cálculo de Programas](/2nd/2/Cálculo de Programas/§ Cálculo de Programas.md)
 * [Eletromagnetismo](/2nd/2/Eletromagnetismo/§ Eletromagnetismo.md)
 * [Laboratórios de Informática III](/2nd/2/Laboratórios de Informática III/§ Laboratórios de Informática III.md)
+  1. [SGV](/2nd/2/Laboratórios de Informática III/Project/README.md)
 * [Programação Orientada aos Objectos](/2nd/2/Programação Orientada aos Objetos/§ Programação Orientada aos Objetos.md)
 * [Sistemas Operativos](/2nd/2/Sistemas Operativos/§ Sistemas Operativos.md)
 
