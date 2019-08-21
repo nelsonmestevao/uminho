@@ -51,6 +51,7 @@
 * [Laboratórios de Informática III](/2nd/2/Laboratórios de Informática III/§ Laboratórios de Informática III.md)
   1. [SGV](/2nd/2/Laboratórios de Informática III/Project/README.md)
 * [Programação Orientada aos Objectos](/2nd/2/Programação Orientada aos Objetos/§ Programação Orientada aos Objetos.md)
+  1. [ACEC](/2nd/2/Programação Orientada aos Objetos/Project/README.md)
 * [Sistemas Operativos](/2nd/2/Sistemas Operativos/§ Sistemas Operativos.md)
 
 ----

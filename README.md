@@ -33,8 +33,11 @@ generate boards with only one solution.
 
 * ##### 2nd semester
   - [Software Labs III](/2nd/2/Laboratórios%20de%20Informática%20III/Project):
-This project was a Sales Management System for Hypermarkets with branches
+This project is a Sales Management System for Hypermarkets with branches
 done twice in C and JAVA.
+  - [Object Oriented Programming](/2nd/2/Programação%20Orientada%20aos%20Objetos/Project):
+This project is a Desktop Application for car renting build in the JAVA
+programming language.
 
 ## Clone
 
