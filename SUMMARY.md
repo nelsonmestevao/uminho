@@ -47,6 +47,7 @@
 * [Estatística Aplicada](/2nd/1/Estatística Aplicada/§ Estatística Aplicada.md)
 * [Introdução aos Sistemas Dinâmicos](/2nd/1/Introdução aos Sistemas Dinâmicos/§ Introdução aos Sistemas Dinâmicos.md)
 * [Cálculo de Programas](/2nd/2/Cálculo de Programas/§ Cálculo de Programas.md)
+  1. [Project Code](/2nd/2/Cálculo de Programas/Project/README.md)
 * [Eletromagnetismo](/2nd/2/Eletromagnetismo/§ Eletromagnetismo.md)
 * [Laboratórios de Informática III](/2nd/2/Laboratórios de Informática III/§ Laboratórios de Informática III.md)
   1. [SGV](/2nd/2/Laboratórios de Informática III/Project/README.md)

@@ -38,6 +38,9 @@ done twice in C and JAVA.
   - [Object Oriented Programming](/2nd/2/Programação%20Orientada%20aos%20Objetos/Project):
 This project is a Desktop Application for car renting build in the JAVA
 programming language.
+  - [Program Calculation](/2nd/2/Cálculo%20de%20Programas/Project):
+This project follows program design by calculation methods with literate
+programming principles using Haskell and `lhs2TeX`.
 
 ## Clone
 

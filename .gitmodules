@@ -31,3 +31,6 @@
 [submodule "Programação Orientada aos Objetos: A Car in Every Corner"]
   path = 2nd/2/Programação Orientada aos Objetos/Project/acec
   url = git@gitlab.com:mieiuminho/poo/acec.git
+[submodule "Cálculo de Programas: Project"]
+  path = 2nd/2/Cálculo de Programas/Project/code
+  url = git@gitlab.com:mieiuminho/cp/pcp.git
