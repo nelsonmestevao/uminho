@@ -41,6 +41,9 @@ programming language.
   - [Program Calculation](/2nd/2/Cálculo%20de%20Programas/Project):
 This project follows program design by calculation methods with literate
 programming principles using Haskell and `lhs2TeX`.
+  - [Operating Systems](/2nd/2/Sistemas%20Operativos/Project):
+This project is a server-client architecture that serves the purpose to handle
+inventory changes requested from multiple clients in a concurrent way.
 
 ## Clone
 

@@ -34,3 +34,9 @@
 [submodule "Cálculo de Programas: Project"]
   path = 2nd/2/Cálculo de Programas/Project/code
   url = git@gitlab.com:mieiuminho/cp/pcp.git
+[submodule "Sistemas Operativos: Report Project"]
+  path = 2nd/2/Sistemas Operativos/Project/report
+  url = git@gitlab.com:mieiuminho/so/report.git
+[submodule "Sistemas Operativos: Gestão de Inventário e Vendas"]
+  path = 2nd/2/Sistemas Operativos/Project/giv
+  url = git@gitlab.com:mieiuminho/so/giv.git
