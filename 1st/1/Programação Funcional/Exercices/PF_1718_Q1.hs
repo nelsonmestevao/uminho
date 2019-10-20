@@ -442,8 +442,7 @@ vertical _ = False
 -- Questão 47 --
 --------------------------------------------------------------------------------
 data Posicao =
-  Pos Int
-      Int
+  Pos Int Int
   deriving (Show)
 
 maisCentral :: [Posicao] -> Posicao

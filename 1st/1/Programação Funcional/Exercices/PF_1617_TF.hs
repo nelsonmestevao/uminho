@@ -62,16 +62,11 @@ sumPair (a, b) (m, c) = (a, b + c)
 -- Questão 2 --
 --------------------------------------------------------------------------------
 data SReais
-  = AA Double
-       Double
-  | FF Double
-       Double
-  | FA Double
-       Double
-  | AF Double
-       Double
-  | Uniao SReais
-          SReais
+  = AA Double Double
+  | FF Double Double
+  | FA Double Double
+  | AF Double Double
+  | Uniao SReais SReais
 
 -- (a)
 showSR :: SReais -> String
@@ -116,8 +111,7 @@ tira x (Uniao y z) = Uniao (tira x y) (tira x z)
 -- Questão 3 --
 --------------------------------------------------------------------------------
 data Rtree a =
-  R a
-    [Rtree a]
+  R a [Rtree a]
 
 -- (a)
 percorre :: [Int] -> Rtree a -> Maybe [a]

@@ -10,12 +10,9 @@ module Ficha_8 where
 data ExpInt
   = Const Int
   | Simetrico ExpInt
-  | Mais ExpInt
-         ExpInt
-  | Menos ExpInt
-          ExpInt
-  | Mult ExpInt
-         ExpInt
+  | Mais ExpInt ExpInt
+  | Menos ExpInt ExpInt
+  | Mult ExpInt ExpInt
 
 e1 :: ExpInt
 e1 = Const 7
@@ -54,8 +51,7 @@ posfixa (Mult e d) = "(" ++ posfixa e ++ " " ++ posfixa d ++ "*" ++ ")"
 -- Exercício 2 --
 --------------------------------------------------------------------------------
 data Rtree a =
-  R a
-    [Rtree a]
+  R a [Rtree a]
   deriving (Show)
 
 rt :: Num a => Rtree a

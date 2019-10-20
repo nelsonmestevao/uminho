@@ -2,16 +2,15 @@
 -- Programação Funcional                                            2014/2015 --
 -- Segundo Teste                                                              --
 -- ========================================================================== --
-
 module T2_1415 where
 
-data Heap a = Vazia
-            | Nodo a (Heap a) (Heap a)
+data Heap a
+  = Vazia
+  | Nodo a (Heap a) (Heap a)
 
 --------------------------------------------------------------------------------
 -- Questão 1 --
 --------------------------------------------------------------------------------
-
 quantos :: Heap a -> Int
 quantos Vazia = 0
 quantos (Nodo r e d) = 1 + (quantos e) + (quantos d)
@@ -19,22 +18,18 @@ quantos (Nodo r e d) = 1 + (quantos e) + (quantos d)
 --------------------------------------------------------------------------------
 -- Questão 2 --
 --------------------------------------------------------------------------------
-
 existe :: Ord a => a -> Heap a -> Bool
 existe a Vazia = False
-existe a (Nodo r e d) = if a == r
-                        then True
-                        else (existe a e) || (existe a d)
+existe a (Nodo r e d) =
+  if a == r
+    then True
+    else (existe a e) || (existe a d)
 
 --------------------------------------------------------------------------------
 -- Questão 3 --
 --------------------------------------------------------------------------------
-
-removeMin :: Heap a -> (a,Heap a)
+removeMin :: Heap a -> (a, Heap a)
 removeMin = undefined
-
 --------------------------------------------------------------------------------
 -- Questão 4 --
 --------------------------------------------------------------------------------
-
-

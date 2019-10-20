@@ -96,8 +96,7 @@ mastermind' segredo = do
 
 -- (c)
 data Aposta =
-  Ap [Int]
-     (Int, Int)-- valida :: Aposta -> Bool
+  Ap [Int] (Int, Int) -- valida :: Aposta -> Bool
 -- valida (Ap (x:xs) (a,b)) =  intervaloNumeros && intervaloEstrelas && quantidadeNumeros
 --                         where
 --                           intervaloNumeros = maximum (x:xs) <= 50 && minimum (x:xs) >= 1

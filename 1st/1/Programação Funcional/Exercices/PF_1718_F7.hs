@@ -9,9 +9,7 @@ module Ficha_7 where
 --------------------------------------------------------------------------------
 data Btree a
   = Empty
-  | N a
-      (Btree a)
-      (Btree a)
+  | N a (Btree a) (Btree a)
   deriving (Show)
 
 t1 :: Num a => Btree a

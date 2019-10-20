@@ -52,12 +52,9 @@ instance Eq Cores where
 data Exp a
   = Const a
   | Simetrico (Exp a)
-  | Mais (Exp a)
-         (Exp a)
-  | Menos (Exp a)
-          (Exp a)
-  | Mult (Exp a)
-         (Exp a)
+  | Mais (Exp a) (Exp a)
+  | Menos (Exp a) (Exp a)
+  | Mult (Exp a) (Exp a)
 
 e :: Exp Int
 e = Mult (Const 2) (Mais (Const 3) (Const 4))

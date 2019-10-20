@@ -105,8 +105,7 @@ somarMinutos m (h1, m1)
 -- Exercício 4 --
 --------------------------------------------------------------------------------
 data Hora4 =
-  H Int
-    Int
+  H Int Int
   deriving (Show, Eq)
 
 -- (a)
@@ -187,11 +186,9 @@ safe s1 s2 =
 -- Exercício 6 --
 --------------------------------------------------------------------------------
 data Ponto
-  = Cartesiano Double
-               Double
-  | Polar Double
-          Double
-  deriving (Show, Eq)-- (a)
+  = Cartesiano Double Double
+  | Polar Double Double
+  deriving (Show, Eq) -- (a)
 -- (b)
 -- (c)
 -- (d)
