@@ -1,5 +1,5 @@
 public class Guide {
-  public static void main(String[] args) {
-    System.out.println("It runs!");
+  public static void main(String[] args) throws Exception {
+    Task_3.execute();
   }
 }
