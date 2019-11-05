@@ -3,5 +3,5 @@ function [f] = equation_2(x)
   p = 12; % numero de prestações
   pm = 24; % valor das prestações mensais
   e = 91; % valor de entrada
-  f = ((1 - ((1 + x) ^ (-p))) / x) - ((pp + e) / pm);
+  f = ((1 - ((1 + x) ^ (-p))) / x) - ((pp - e) / pm);
 end
