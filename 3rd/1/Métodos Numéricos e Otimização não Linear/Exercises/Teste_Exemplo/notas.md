@@ -2,19 +2,19 @@
 
 `format long` -> Para ver mais casas decimais
 `format short` -> para ver menos casas decimais
-vetor=onde começa:espaçamento:onde acaba
-eye(x) -> gera uma matriz identidade x por x
-rand(x) -> gera uma matriz x por x de elementos aleatórios entre 0 e 1
-ones(x) -> gera uma matriz x por x de 1’s
-diag(diag(A)) -> primeiro vai buscar os elementos que estão na diagonal da matriz A, de seguida coloca-os numa matriz onde todos os outros elementos são 0
+`vetor=onde começa:espaçamento:onde acaba`
+`eye(x)` -> gera uma matriz identidade x por x
+`rand(x)` -> gera uma matriz x por x de elementos aleatórios entre 0 e 1
+`ones(x)` -> gera uma matriz x por x de 1’s
+`diag(diag(A))` -> primeiro vai buscar os elementos que estão na diagonal da matriz A, de seguida coloca-os numa matriz onde todos os outros elementos são 0
 
 # Sistemas de equações lineares
 
 Introduzimos a matriz A, por exemplo, [1 2 3;4 5 6]
 Introduzimos o vetor b, por exemplo, [3;4;5;2;6;2]
 A solução do sistema será dada por A\b
-Para a matriz inversa de A, introduzimos inv(A) ou introduzimos a matriz triangular superior e os vetores b1,b2,b3,b4 que correspondem às colunas da matriz identidade já transformadas e fazemos A\b
-Para o determinante de A, introduzimos det(A)
+Para a matriz inversa de A, introduzimos `inv(A)` ou introduzimos a matriz triangular superior e os vetores b1,b2,b3,b4 que correspondem às colunas da matriz identidade já transformadas e fazemos A\b
+Para o determinante de A, introduzimos `det(A)`
 
 # Método da Secante e Método de Newton
 
@@ -23,13 +23,14 @@ Para o determinante de A, introduzimos det(A)
 Introduzir `optimset(‘fsolve’)` se quisermos conhecer todos os campos.
 
 Introduzimos a função em questão, por exemplo:
+
+$7 * (2-0.9^t) - 10 = 0$
+
 ```
-7(2-0.9^t)-10=0
-function[f]=newton(x)
-f=7*(2-0.9^t)-10;
+function[f] = newton(t)
+  f = 7 * (2-0.9^t) - 10;
 end
 ```
-
 
 # Sistemas de equações não lineares
 
