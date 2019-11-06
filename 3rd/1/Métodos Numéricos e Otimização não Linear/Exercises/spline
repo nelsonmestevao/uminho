@@ -1,0 +1,26 @@
+-- Se nao for completa e so por os valores da tabela em vetores e aplicar a funcao
+-- Consideremos que temos o vetor x e f
+
+s = spline(x, y)
+
+-- A operação acima dá uma série de coeficientes temos de escolher a linha em que se enquadra o ponto que temos de estimar
+
+-- Forma de uma equação Spline:
+C1 * (x-x_i)^3 + C2 * (x-x_i)^2 + C3 * (x-x_i) + C4
+
+-- Para estimar o valor de uma spline num ponto:
+
+est = spline(x, y, ponto)
+
+-- IMPORTANTE: Se for pedida uma SPLINE COMPLETA:
+
+    * retirar os dois pontos mais proximos dos extremos para calcular as derivadas:
+
+    d0 = ((f(0) - f(1)) / (x(0) - x(1)))
+    dn = ((f(n-1) - f(n)) ( (x(n-1)) - x(n)))
+
+    s = spline(x_novo, [d0 y_novo dn]);
+
+    x_novo -> vetor x sem os elementos que retiramos para calcular d0
+    y_novo -> vetor y sem os elementos que retiramos para calcular dn
+

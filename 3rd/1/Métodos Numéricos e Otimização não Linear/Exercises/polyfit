@@ -1,0 +1,19 @@
+-- Temos um conjunto de valor x e f(x)
+
+-- Temos de os colocar em vetores
+x = [1 2 3 4 5]
+
+f = [2 4 6 8 10]
+
+-- IMPORTANTE: ver o grau da interpolação polinomial que nos pedem:
+
+    * consideremos que o grau é N
+    * temos de escolher os N pontos mais próximos do ponto a estimar
+
+consideremos para o exemplo vertente que pretendemos um polinómio de grau 3 -> precisamos de 4 pontos (e queremos estimar x = 3)
+
+p = polyfit(x(1:4), y(1:4), 3);
+
+-- Para estimar o valor do polinómio em x = 3
+estimativa = polyval(p, 3);
+

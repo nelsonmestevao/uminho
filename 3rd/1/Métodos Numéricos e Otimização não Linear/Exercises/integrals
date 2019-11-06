@@ -1,0 +1,8 @@
+-- Quando temos valores fornecidos em tabelas:
+
+integral = trapz(x, y)
+
+-- Quando temos a expressão da função
+
+integral = quad('funcao', x_inferior, x_superior, tolerancia)
+(podemos ter ou nao a tolerancia)

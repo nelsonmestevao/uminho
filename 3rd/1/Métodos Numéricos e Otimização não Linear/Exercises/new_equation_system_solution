@@ -1,0 +1,22 @@
+-- Tomemos como exemplo o seguinte sistema:
+x1 + 2x2 = 2;
+2x1 + 4x2 = 6;
+
+-- Temos de definir o sistema de equações
+function [F] = sistema(x)
+    F(1) = x(1) + 2 * x(2) - 2;
+    F(2) = 2 * x(1) + 4 * x(2) - 6;
+end
+
+-- Temos de definir as condições de optimização
+op = optimset('TolFun', valor1, 'TolX', valor2);
+
+-- Temos de definir a aproximação inicial
+x0 = [1 2]
+
+-- Resolução
+[x, fval, exitflag, output] = fsolve('sistema', x0, op)
+
+x -> vetor com as soluções do sistema
+fval -> valor que as equações do sistema tomam com a nova solução
+exitflag -> se for maior que 0 convergiu

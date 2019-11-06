@@ -1,0 +1,21 @@
+Tomemos como exemplo a função `y = 2x + 1`
+
+-- Primeiro que tudo tenho de criar a função no matlab (por exemplo)
+function [F] = dobro_plus_one(x)
+    F = 2 * x + 1;
+end
+
+-- Depois temos de definir as condições de optimização, se existirem
+op = optimset('TolFun', valor1, 'TolX', valor2)
+
+-- Definir a aproximação inicial
+x0 = valor3
+
+-- Resolver a equação (com `fsolve`)
+[x, fval, exitflag, output] = fsolve('dobro_plus_one', x0, op)
+
+
+x -> tem a solução que pretendemos para o problema
+fval -> valor que a função toma com o presente valor de `x`
+exitflag -> desde que seja maior que 0 convergiu
+output -> informações importante

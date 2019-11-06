@@ -1,0 +1,20 @@
+-- Vetor
+[x1 x2 x3]
+
+-- Vetor coluna
+[x1; x2; x3]
+
+-- Selecionar frames de uma matriz
+B = A(2:3, 1:2) -- linhas 2 a 3 e colunas 1 a 2 da matriz A
+
+-- Matriz identidade
+B = eye(dimensao)
+
+-- Matriz com números random
+B = rand(dimensao, dimensao) (ou dimensao só, caso seja quadrada)
+
+-- Matriz nula
+B = zeros(dimensao)
+
+-- Multiplicação número a número de matrizes
+C = B .* A
