@@ -12,8 +12,8 @@ public class RWLock {
         this.lock = new ReentrantLock();
         this.readWait = this.lock.newCondition();
         this.writeWait = this.lock.newCondition();
-        int readers = 0;
-        int writers = 0;
+        this.readers = 0;
+        this.writers = 0;
     }
 
     public void readLock() throws InterruptedException {

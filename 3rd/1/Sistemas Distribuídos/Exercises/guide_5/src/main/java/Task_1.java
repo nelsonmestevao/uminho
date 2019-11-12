@@ -1,8 +1,6 @@
 public class Task_1 {
     public static void execute() {
         Warehouse wh = new Warehouse();
-        Consumer cs = new Consumer(wh);
-        Producer pd = new Producer(wh);
 
         Thread[] threads = new Thread[2];
         threads[0] = new Thread(new Producer(wh));
