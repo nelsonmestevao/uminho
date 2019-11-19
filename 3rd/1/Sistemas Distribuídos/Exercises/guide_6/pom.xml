@@ -47,12 +47,26 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>1.6.0</version>
-        <configuration>
-          <mainClass>Server</mainClass>
-          <arguments>
-            <argument></argument>
-          </arguments>
-        </configuration>
+        <executions>
+          <execution>
+            <id>server</id>
+            <configuration>
+              <mainClass>Server</mainClass>
+              <arguments>
+                <argument></argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>client</id>
+            <configuration>
+              <mainClass>Client</mainClass>
+              <arguments>
+                <argument></argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
