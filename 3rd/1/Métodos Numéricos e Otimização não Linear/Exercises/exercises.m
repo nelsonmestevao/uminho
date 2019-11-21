@@ -1,4 +1,15 @@
-%% 57)
+%% Métodos Númericos e Otimização não Linear
+% Exercícios Práticos                                               2019/2020
+
+%%
+clear all
+
+%%
+format long
+
+%% Exercício 57
+% Mínimos Quadrados
+
 
 xi = [1.5 2.0 3.0 4.0];
 
@@ -38,6 +49,66 @@ M = @(x) cs(1) / x - cs(2) * x;
 
 s1 = sum((fxi - p1) .^ 2)
 
-%%
+%% Exercício 57
+% Método dos Mínimos Quadrados
 
-clear all
+x = [1.5 2.0 3.0 4.0];
+f = [4.9 3.3 2.0 1.5];
+
+% a)
+
+[p1, r] = polyfit(x, f, 1)
+
+polyval(p1, 2.5)
+
+S_p1 = r.normr ^ 2
+
+[p2, r] = polyfit(x, f, 2)
+
+polyval(p2, 2.5)
+
+% b)
+
+S_p2 = r.normr ^ 2
+
+[c, S] = lsqcurvefit(@mq, [1 1], x, f)
+
+mq(c, 2.5)
+
+%% Exercício 62
+% DSC: 
+
+delta = 2
+
+f = @(x) - exp(0.4* x - 0.01 * x^2)
+
+x1 = 30
+
+f(x1)
+
+x2 = x1 + delta
+
+f(x2)
+
+x_1 = x1 - delta
+
+f(x_1)
+
+x_2 = x_1 - 2 * delta
+
+f(x_2)
+
+x_3 = x_2 - 4 * delta
+
+f(x_3)
+
+x_4 = x_3 - 8 * delta
+
+f(x_4)
+
+% ponto medio
+xm = (x_4 + x_3) / 2
+
+f(xm)
+
+DELTA = 8

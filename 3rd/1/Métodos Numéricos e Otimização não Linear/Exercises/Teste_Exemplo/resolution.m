@@ -1,6 +1,8 @@
 %% Métodos Numéricos e Otimização não Linear
 % Teste Tipo: _Prático-Laboratorial_
 
+%%
+
 format long
 
 %% Questão 1
