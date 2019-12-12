@@ -1,8 +1,9 @@
 %% Métodos Númericos e Otimização não Linear
-% Exercícios Práticos                                               2019/2020
+% Exercícios Práticos                                            2019/2020
 
 %%
 clear all
+clc
 
 %%
 format long
@@ -112,3 +113,83 @@ xm = (x_4 + x_3) / 2
 f(xm)
 
 DELTA = 8
+
+%% MATLAB
+
+%% 1
+optimset fminsearch;
+op = optimset('display', 'iter');
+
+y = [1 1];
+
+[x, f, exitflag, out] = fminsearch(@NM1, y, op)
+
+
+%% 2
+op = optimset('display', 'iter');
+
+y = [1 -0.1]
+
+[x, f, exitflag, out] = fminsearch(@NM2, y, op)
+
+
+%% 3
+op = optimset('display', 'iter');
+
+n = 2;
+i = 1:n;
+
+y(i) = i - (n/2 + 0.5);
+
+[x, f, exitflag, out] = fminsearch(@NM3, y, op)
+
+
+%%
+op = optimset('display', 'iter', 'TolX', 1e-20, 'MaxFunEvals', 10000, 'MaxIter', 10000);
+
+n = 5;
+i = 1:n;
+
+y(i) = i - (n/2 + 0.5);
+
+[x, f, exitflag, out] = fminsearch(@NM3, y, op)
+
+
+%% 4
+op = optimset('display', 'iter');
+
+n = 2;
+i = 1:n;
+y(i) = i - (n/2 + 0.5);
+
+[x, f, exitflag, out] = fminsearch(@NM4, y, op)
+
+
+%% 5
+op = optimset('display', 'iter');
+
+y = [-1 5];
+w = 500;
+
+[x, f, exitflag, out] = fminsearch(@NM5, y, op, w)
+
+
+%% 6
+op = optimset('display', 'iter');
+
+y = ones(1, 4); 
+
+[x, f, exitflag, out] = fminsearch(@NM6, y, op)
+
+
+%% 5 
+op = optimset('hessupdate', 'dfp');
+
+y = [1:10];
+
+[x, f, exitflag, out, grad, hess] = fminunc(@QN5, y, op)
+
+
+%% 
+clear all
+clc
