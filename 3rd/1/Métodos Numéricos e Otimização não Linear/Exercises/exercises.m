@@ -115,8 +115,25 @@ f(xm)
 DELTA = 8
 
 %% MATLAB
+%
 
-%% 1
+%% 1.1
+optimset fminunc
+
+op = optimset('gradobj', 'on'); % para usar o gradiente
+
+[x, f, exitflag, output] = fminunc(@aluffi, [-1;0.5], op)
+
+
+%% 1.5 
+op = optimset('HessUpdatee', 'dfp')
+
+y = ones(1,10)
+
+[x, f, exitflag, out, grad, hess] = fminunc(@QN5, y, op)
+
+
+%% 2.1
 optimset fminsearch;
 op = optimset('display', 'iter');
 
@@ -125,7 +142,7 @@ y = [1 1];
 [x, f, exitflag, out] = fminsearch(@NM1, y, op)
 
 
-%% 2
+%% 2.2
 op = optimset('display', 'iter');
 
 y = [1 -0.1]
@@ -133,7 +150,7 @@ y = [1 -0.1]
 [x, f, exitflag, out] = fminsearch(@NM2, y, op)
 
 
-%% 3
+%% 2.3
 op = optimset('display', 'iter');
 
 n = 2;
@@ -155,7 +172,7 @@ y(i) = i - (n/2 + 0.5);
 [x, f, exitflag, out] = fminsearch(@NM3, y, op)
 
 
-%% 4
+%% 2.4
 op = optimset('display', 'iter');
 
 n = 2;
@@ -165,7 +182,7 @@ y(i) = i - (n/2 + 0.5);
 [x, f, exitflag, out] = fminsearch(@NM4, y, op)
 
 
-%% 5
+%% 2.5
 op = optimset('display', 'iter');
 
 y = [-1 5];
@@ -174,7 +191,7 @@ w = 500;
 [x, f, exitflag, out] = fminsearch(@NM5, y, op, w)
 
 
-%% 6
+%% 2.6
 op = optimset('display', 'iter');
 
 y = ones(1, 4); 
@@ -182,14 +199,7 @@ y = ones(1, 4);
 [x, f, exitflag, out] = fminsearch(@NM6, y, op)
 
 
-%% 5 
-op = optimset('hessupdate', 'dfp');
+%%
 
-y = [1:10];
-
-[x, f, exitflag, out, grad, hess] = fminunc(@QN5, y, op)
-
-
-%% 
 clear all
 clc
