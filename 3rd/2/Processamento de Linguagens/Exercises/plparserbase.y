@@ -13,13 +13,12 @@ X : Y
   ;
 %%
 
-int yyerror(char *s)
-{
+int yyerror(char *s) {
   fprintf(stderr, "ERRO: %s \n", s);
 }
 
-int main()
-{
+int main() {
   yyparse();
-  return(0);
+  return 0;
 }
+
