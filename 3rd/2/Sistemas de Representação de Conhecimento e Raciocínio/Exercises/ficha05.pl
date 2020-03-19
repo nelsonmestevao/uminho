@@ -25,10 +25,20 @@ filho( carlos,jose ).
 %--------------------------------- - - - - - - - - - -  -  -  -  -   -
 % Extensao do predicado idade: Pessoa,Idade -> {V,F}
 
-idade( joao,21 ).
-idade( jose,42 ).
-idade( manuel,63 ).
-idade( carlos,19 ).
+idade( joao,21, m ).
+idade( jose,42, m ).
+idade( manuel,63, m ).
+idade( carlos,19, m ).
+
+descendente( D,A,1 ) :-
+    filho( D,A ).
+descendente( D,A, G  ) :-
+    filho( D,X ),
+    descendente( X,A,N ),
+	G is N+1.
+
+avo( A,D ) :-
+    descendente( D,A,2 ).
 
 %--------------------------------- - - - - - - - - - -  -  -  -  -   -
 % Invariante Estrutural:  nao permitir a insercao de conhecimento
