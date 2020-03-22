@@ -59,3 +59,20 @@
 ----
 
 ## 3º Ano
+
+* [Bases de Dados](/3rd/1/Bases de Dados/§ Bases de Dados.md)
+  1. [CCT](/3rd/1/Bases de Dados/Project/README.md)
+* [Desenvolvimento de Sistemas de Software](/3rd/1/Desenvolvimento de Sistemas de Software/§ Desenvolvimento de Sistemas de Software.md)
+  1. [SYM](/3rd/1/Desenvolvimento de Sistemas de Software/Project/README.md)
+* [Métodos Numéricos e Otimização não Linear](/3rd/1/Métodos Numéricos e Otimização não Linear/§ Métodos Numéricos e Otimização não Linear.md)
+* [Modelos Determinísticos de Investigação Operacional](/3rd/1/Modelos Determinísticos de Investigação Operacional/§ Modelos Determinísticos de Investigação Operacional.md)
+* [Redes de Computadores](/3rd/1/Redes de Computadores/§ Redes de Computadores.md)
+* [Sistemas Distribuídos](/3rd/1/Sistemas Distribuídos/§ Sistemas Distribuídos.md)
+  1. [FileShare](/3rd/1/Sistemas Distribuídos/Project/README.md)
+
+* [Computação Gráfica](/3rd/2/Computação Gráfica/§ Computação Gráfica.md)
+* [Comunicações por Computador](/3rd/2/Comunicações por Computador/§ Comunicações por Computador.md)
+* [Laboratórios de Informática IV](/3rd/2/Laboratórios de Informática IV/§ Laboratórios de Informática IV.md)
+* [Modelos Estocásticos de Investigação Operacional](/3rd/2/Modelos Estocásticos de Investigação Operacional/§ Modelos Estocásticos de Investigação Operacional.md)
+* [Processamento de Linguagens](/3rd/2/Processamento de Linguagens/§ Processamento de Linguagens.md)
+* [Sistemas de Representação de Conhecimento e Raciocínio](/3rd/2/Sistemas de Representação de Conhecimento e Raciocínio/§ Sistemas de Representação de Conhecimento e Raciocínio.md)
