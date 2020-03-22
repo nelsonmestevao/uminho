@@ -45,6 +45,19 @@ programming principles using Haskell and `lhs2TeX`.
 This project is a server-client architecture that serves the purpose to handle
 inventory changes requested from multiple clients in a concurrent way.
 
+### **3rd year**
+
+* ##### 1st semester
+  - [Databases](/3rd/1/Bases%20de%20Dados/Project):
+This project consists in a game of cars. It has been developed in the Haskell
+programming language.
+  - [Software Systems Development](/3rd/1/Desenvolvimento%20de%20Sistemas%20de%20Software/Project):
+This project consists in a game of cars. It has been developed in the Haskell
+programming language.
+  - [Distributed Systems](/3rd/1/Sistemas%20Distribuídos/Project):
+This project consists in a game of cars. It has been developed in the Haskell
+programming language.
+
 ## Clone
 
 If you want to clone the repository alongside with all project just do it like
@@ -66,9 +79,13 @@ git submodule update
 * [Nelson Estevão][nelson]
 * [Pedro Ribeiro][pedro]
 * [Rui Mendes][rui]
+* [Hugo Carvalho][hugo]
+* [Ricardo Silva][ricardo]
 
+[hugo]: https://github.com/HugoCarvalho99
 [nelson]: https://github.com/nelsonmestevao
 [pedro]: https://github.com/pedroribeiro22
+[ricardo]: https://github.com/ricardoslv
 [rui]: https://github.com/ruimendes29
 
 <div align="center">

@@ -40,3 +40,27 @@
 [submodule "Sistemas Operativos: Gestão de Inventário e Vendas"]
   path = 2nd/2/Sistemas Operativos/Project/giv
   url = git@gitlab.com:mieiuminho/so/giv.git
+[submodule "Bases de Dados: Modelos Relacionais"]
+  path = 3rd/1/Bases de Dados/Project/models
+  url = git@gitlab.com:mieiuminho/bd/cct.models.git
+[submodule "Bases de Dados: Migrações NoSQL"]
+  path = 3rd/1/Bases de Dados/Project/migrations
+  url = git@gitlab.com:mieiuminho/bd/cct.migrations.git
+[submodule "Bases de Dados: Relatório"]
+  path = 3rd/1/Bases de Dados/Project/report
+  url = git@gitlab.com:mieiuminho/bd/cct.report.git
+[submodule "Bases de Dados: Apresentação"]
+  path = 3rd/1/Bases de Dados/Project/presentation
+  url = git@gitlab.com:mieiuminho/bd/apresentacao.git
+[submodule "Desenvolvimento de Sistemas de Software: Share Your Media"]
+  path = 3rd/1/Desenvolvimento de Sistemas de Software/Project/report
+  url = git@gitlab.com:mieiuminho/dss/sym.git
+[submodule "Desenvolvimento de Sistemas de Software: Report"]
+  path = 3rd/1/Desenvolvimento de Sistemas de Software/Project/report
+  url = git@gitlab.com:mieiuminho/dss/sym.report.git
+[submodule "Sistemas Distribuídos: FileShare"]
+  path = 3rd/1/Sistemas Distribuídos/Project/fileshare
+  url = git@gitlab.com:mieiuminho/sd/fileshare.git
+[submodule "Sistemas Distribuídos: Relatório"]
+  path = 3rd/1/Sistemas Distribuídos/Project/report
+  url = git@gitlab.com:mieiuminho/sd/fileshare.report.git
