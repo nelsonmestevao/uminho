@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+. scripts/helpers.sh
+
+set -e
+
+echo_info "Formatting C++ files..."
+find src -type f -print0 -iname "*.h" -o -iname "*.cpp" | xargs --null clang-format -verbose -i
+echo
+
+if [ "$CI" != true ]; then
+  echo_info "Formatting shell scripts..."
+  shfmt -f -w -i 2 -ci .
+  echo
+fi
+
+if [ "$CI" == true ]; then
+  check_changes && exit 1
+fi
+
+echo_done "Formated all files!"
