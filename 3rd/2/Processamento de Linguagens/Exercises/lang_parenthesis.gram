@@ -1,9 +1,0 @@
-Par --> '(' Par ')'
-      | Par Par
-      | &
-
-// Ou
-
-Par --> '(' Par ')' Par
-      | &
-

@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-
-<a teste="xpto" t2="exemplo">
-  <b>Isto é bold!</b>
-  Isto é texto normal.
-  <c texto="self closing tag" />
-</a>
-
