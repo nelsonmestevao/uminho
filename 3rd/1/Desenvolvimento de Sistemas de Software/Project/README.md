@@ -1,5 +1,5 @@
-[sym]: https://gitlab.com/mieiuminho/bd/sym
-[report]: https://gitlab.com/mieiuminho/bd/sym.report
+[sym]: https://gitlab.com/mieiuminho/dss/sym
+[report]: https://gitlab.com/mieiuminho/dss/sym.report
 
 # Software Systems Development
 
