@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+. scripts/config.sh
+
+if [ "$1" = "-g" ]; then
+  cmake -DCMAKE_BUILD_TYPE=Debug -B $debug_dir
+  cmake --build "$debug_dir" --target "$project_name"
+else
+  cmake -DCMAKE_BUILD_TYPE=Release -B $release_dir
+  cmake --build "$release_dir" --target "$project_name"
+fi
+
