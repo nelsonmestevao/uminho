@@ -15,7 +15,7 @@ during my degree. You can read all my notes [here][gitbook]. The projects are
 git submodules, so you want to remember that if you clone the repository. I hope
 you find it useful somehow.
 
-## List of Projects
+## :package: List of Projects
 
 ### **1st year**
 
@@ -64,19 +64,41 @@ you find it useful somehow.
     This project is a cloud server for sharing files using a command-line
     interface in an interactively way for ease of use.
 
-## Contributors
+## :handshake: Contributors
 
 - [Nelson Estevão][nelson]
-- [Pedro Ribeiro][pedro]
-- [Rui Mendes][rui]
 - [Hugo Carvalho][hugo]
+- [Pedro Ribeiro][pedro]
 - [Ricardo Silva][ricardo]
+- [Rui Mendes][rui]
 
 [hugo]: https://github.com/HugoCarvalho99
 [nelson]: https://github.com/nelsonmestevao
 [pedro]: https://github.com/pedroribeiro22
 [ricardo]: https://github.com/ricardoslv
 [rui]: https://github.com/ruimendes29
+
+## :sparkles: Credits
+
+In addition to all the help from contributors to each of the projects, many
+other people had a positive impact on my academic journey. This list tries to
+mention the most decisive ones by alphabetical order.
+
+- [Catarina Machado][catarina]
+- [Daniel Tinoco][tinoco]
+- [Fernando Mendes][frm]
+- [Francisco Lira][lira]
+- [José Pedro Resende][resende]
+- [João Vilaça][vilaça]
+- [Pedro Mendes][mendess]
+
+[catarina]: https://github.com/catarinamachado
+[frm]: https://github.com/frm
+[lira]: https://github.com/FranciscoLira
+[mendess]: https://github.com/mendess
+[resende]: https://github.com/ZePedroResende
+[tinoco]: https://github.com/0urobor0s
+[vilaça]: https://github.com/machadovilaca
 
 <div align="center">
   <sub>2017 - PRESENT</sub>
