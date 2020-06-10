@@ -53,7 +53,7 @@
   path = 3rd/1/Bases de Dados/Project/presentation
   url = git@gitlab.com:mieiuminho/bd/apresentacao.git
 [submodule "Desenvolvimento de Sistemas de Software: Share Your Media"]
-  path = 3rd/1/Desenvolvimento de Sistemas de Software/Project/report
+  path = 3rd/1/Desenvolvimento de Sistemas de Software/Project/sym
   url = git@gitlab.com:mieiuminho/dss/sym.git
 [submodule "Desenvolvimento de Sistemas de Software: Report"]
   path = 3rd/1/Desenvolvimento de Sistemas de Software/Project/report
