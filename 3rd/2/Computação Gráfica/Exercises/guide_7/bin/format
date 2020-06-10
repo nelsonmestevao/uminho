@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+. scripts/helpers.sh
+
+echo_info "Formatting C++ files..."
+clang-format -verbose --style="{BasedOnStyle: Google, IndentWidth: 4, IndentCaseLabels: true}" -i *.cpp

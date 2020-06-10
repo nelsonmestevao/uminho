@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+. scripts/helpers.sh
+
+set -e
+
+shellcheck -x bin/* scripts/*
+
+echo_done "Linting passed!"
