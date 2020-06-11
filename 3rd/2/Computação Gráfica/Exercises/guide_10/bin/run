@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+. scripts/config.sh
+
+bin/build
+
+"$release_dir"/"$project_name" "$@"
+
