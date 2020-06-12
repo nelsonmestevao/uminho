@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+. scripts/config.sh
+
+bin/build -g
+
+gdb "$debug_dir"/engine
