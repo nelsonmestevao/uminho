@@ -1,7 +1,3 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/Python,venv
-# Edit at https://www.toptal.com/developers/gitignore?templates=Python,venv
-
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -86,9 +82,6 @@ target/
 profile_default/
 ipython_config.py
 
-# pyenv
-.python-version
-
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
@@ -139,13 +132,10 @@ dmypy.json
 ### venv ###
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-[Bb]in
 [Ii]nclude
 [Ll]ib
 [Ll]ib64
 [Ll]ocal
-[Ss]cripts
 pyvenv.cfg
 pip-selfcheck.json
 
-# End of https://www.toptal.com/developers/gitignore/api/Python,venv

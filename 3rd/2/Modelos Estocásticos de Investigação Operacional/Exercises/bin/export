@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+. scripts/helpers.sh
+
+source .venv/bin/activate
+
+echo_info "export" "Generating PDFs"
+for notebook in notebooks/*.ipynb; do
+  python3 -m jupyter nbconvert "$notebook" --to pdf --output-dir="out/"
+  echo_done "$notebook"
+done

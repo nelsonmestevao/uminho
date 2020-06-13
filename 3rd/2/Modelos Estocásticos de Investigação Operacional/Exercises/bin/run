@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+. scripts/helpers.sh
+
+source .venv/bin/activate
+
+echo_info "Execute" "Running notebooks"
+for notebook in notebooks/*.ipynb; do
+  jupyter nbconvert --execute --to notebook --inplace "$notebook"
+  echo_done "$notebook"
+done

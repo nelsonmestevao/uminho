@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+. scripts/helpers.sh
+
+echo_info "setup" "Creating virtual environment..."
+python3 -m venv .venv
+
+source .venv/bin/activate
+
+echo_info "setup" "Upgrading pip..."
+python3 -m pip install --upgrade pip
+
+echo_info "setup" "Installing dependencies..."
+python3 -m pip install -r requirements.txt
+
