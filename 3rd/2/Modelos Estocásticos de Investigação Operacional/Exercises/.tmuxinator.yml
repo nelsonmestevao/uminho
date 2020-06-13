@@ -1,0 +1,26 @@
+# /home/nelson/.dotfiles/tmux/projects/fileshare.yml
+
+name: analysis
+root: .
+
+startup_window: python
+startup_pane: ipython
+
+windows:
+  - python:
+      layout: main-vertical
+      panes:
+        - ipython:
+            - source .venv/bin/activate
+            - ipython
+        - git:
+            - source .venv/bin/activate
+            - git status
+  - jupyter:
+      layout: main-vertical
+      panes:
+        - jupyter:
+          - bin/analysis
+  - shell:
+      - source .venv/bin/activate
+
