@@ -10,10 +10,10 @@
   </h2>
 </div>
 
-This repository contains my class notes as well as the projects I developed
-during my degree. You can read all my notes [here][gitbook]. The projects are
-git submodules, so you want to remember that if you clone the repository. I hope
-you find it useful somehow.
+This repository contains solved exercises and class notes as well as the
+projects I developed during my degree. You can read all my notes
+[here][gitbook]. The projects are git submodules, so you want to remember that
+if you clone the repository. I hope you find it useful somehow.
 
 ## :package: List of Projects
 
