@@ -13,9 +13,6 @@ windows:
         - ipython:
             - source .venv/bin/activate
             - ipython
-        - git:
-            - source .venv/bin/activate
-            - git status
   - jupyter:
       layout: main-vertical
       panes:
