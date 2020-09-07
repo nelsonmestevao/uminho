@@ -64,6 +64,11 @@ if you clone the repository. I hope you find it useful somehow.
     This project is a cloud server for sharing files using a command-line
     interface in an interactively way for ease of use.
 
+- ##### 2nd semester
+  - [Computer Graphics](/3rd/2/Computação%20Gráfica/Project):
+    We developed a fully capable 3D Graphics Engine that can render any type
+    of figure and its movement by just providing a model in XML format.
+
 ## :handshake: Contributors
 
 - [Nelson Estevão][nelson]
