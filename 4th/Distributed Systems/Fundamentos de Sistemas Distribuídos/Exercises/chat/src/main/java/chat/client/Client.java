@@ -1,4 +1,4 @@
-package client;
+package chat.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,9 +7,9 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.List;
 
-import util.Parser;
-import view.Color;
-import view.Terminal;
+import chat.util.Parser;
+import chat.view.Color;
+import chat.view.Terminal;
 
 public final class Client {
     private static final String HOSTNAME = System.getenv("APP_SERVER_HOSTNAME");
@@ -79,7 +79,7 @@ public final class Client {
                 .start();
 
         Terminal.info("Client is up at " + socket.getLocalSocketAddress());
-        Terminal.info("Session established with server on " + socket.getRemoteSocketAddress());
+        Terminal.info("Session established with chat.server on " + socket.getRemoteSocketAddress());
     }
 
     public void disconnect() throws IOException {
@@ -92,7 +92,7 @@ public final class Client {
         Terminal.clear();
         List<String> logo =
                 Parser.readFile(
-                        Client.class.getResource("../art/client.ascii").toString().split(":")[1]);
+                        Client.class.getResource("../../art/client.ascii").toString().split(":")[1]);
         Terminal.welcome(logo);
     }
 }

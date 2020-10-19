@@ -1,4 +1,4 @@
-package server;
+package chat.server;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,8 +14,8 @@ import sun.misc.Signal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import util.Parser;
-import view.Terminal;
+import chat.util.Parser;
+import chat.view.Terminal;
 
 public final class Server {
     private static final String HOSTNAME = System.getenv("APP_SERVER_HOSTNAME");
@@ -41,7 +41,7 @@ public final class Server {
         // handler to Ctrl + C
         Signal.handle(new Signal("INT"), this::exit);
 
-        // create server
+        // create chat.server
         try {
             this.socket = new ServerSocket();
             this.socket.bind(new InetSocketAddress(HOSTNAME, PORT));
@@ -73,7 +73,7 @@ public final class Server {
         Terminal.clear();
         List<String> logo =
                 Parser.readFile(
-                        Server.class.getResource("../art/server.ascii").toString().split(":")[1]);
+                        Server.class.getResource("../../art/server.ascii").toString().split(":")[1]);
         Terminal.welcome(logo);
     }
 }

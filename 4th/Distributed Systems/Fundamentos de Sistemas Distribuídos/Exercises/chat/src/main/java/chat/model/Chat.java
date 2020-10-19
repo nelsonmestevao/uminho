@@ -1,4 +1,4 @@
-package model;
+package chat.model;
 
 import java.io.PrintWriter;
 import java.util.List;

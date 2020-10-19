@@ -25,9 +25,9 @@
     </developers>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>14</java.version>
         <project.encoding>UTF-8</project.encoding>
-        <main.class>App</main.class>
+        <main.class>chat.App</main.class>
     </properties>
 
     <dependencies>
@@ -81,19 +81,13 @@
                     <execution>
                         <id>server</id>
                         <configuration>
-                            <mainClass>server.Server</mainClass>
-                            <arguments>
-                                <argument></argument>
-                            </arguments>
+                            <mainClass>chat.server.Server</mainClass>
                         </configuration>
                     </execution>
                     <execution>
                         <id>client</id>
                         <configuration>
-                            <mainClass>client.Client</mainClass>
-                            <arguments>
-                                <argument></argument>
-                            </arguments>
+                            <mainClass>chat.client.Client</mainClass>
                         </configuration>
                     </execution>
                 </executions>

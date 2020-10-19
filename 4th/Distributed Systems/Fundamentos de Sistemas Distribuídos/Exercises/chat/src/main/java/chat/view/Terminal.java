@@ -1,4 +1,4 @@
-package view;
+package chat.view;
 
 import java.io.IOException;
 import java.util.List;

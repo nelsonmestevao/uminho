@@ -1,4 +1,4 @@
-package view;
+package chat.view;
 
 public final class Color {
     public static final String ANSI_RESET = "\u001B[0m";

@@ -1,4 +1,4 @@
-package server;
+package chat.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +23,11 @@ public final class Session implements Runnable {
 
     private static Logger log = LogManager.getLogger(Session.class);
 
-    public Session(final int id, final Socket socket, final Stack<String> messages, final List<PrintWriter> users) {
+    public Session(
+            final int id,
+            final Socket socket,
+            final Stack<String> messages,
+            final List<PrintWriter> users) {
         this.id = id;
         this.socket = socket;
         this.messages = messages;
@@ -43,7 +47,7 @@ public final class Session implements Runnable {
             String message;
             while ((message = in.readLine()) != null) {
                 this.messages.add(message);
-                for(PrintWriter elem : this.users) {
+                for (PrintWriter elem : this.users) {
                     if (elem == this.out) {
                         continue;
                     }

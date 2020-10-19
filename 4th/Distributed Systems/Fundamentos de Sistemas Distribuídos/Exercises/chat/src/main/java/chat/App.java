@@ -1,3 +1,5 @@
+package chat;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,12 +10,12 @@ import com.beust.jcommander.ParameterException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import util.Parser;
+import chat.util.Parser;
 
 public final class App {
     private static Logger log = LogManager.getLogger(App.class);
 
-    private static final String PROGRAM_NAME = "java-tmpl";
+    private static final String PROGRAM_NAME = "chat";
 
     @Parameter(
             names = {"-h", "--help"},
