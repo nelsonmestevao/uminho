@@ -7,7 +7,18 @@ Vagrant.configure("2") do |config|
     vb.cpus = 1
   end
 
-  N = 1
+  config.vm.provision "shell", inline: <<-SHELL
+    yum install wget -y
+    wget https://research.cs.wisc.edu/htcondor/yum/RPM-GPG-KEY-HTCondor
+    rpm --import RPM-GPG-KEY-HTCondor
+    cd /etc/yum.repos.d
+    wget https://research.cs.wisc.edu/htcondor/yum/repo.d/htcondor-stable-rhel8.repo
+    yum install condor -y
+    systemctl start condor
+    systemctl enable condor
+  SHELL
+
+  N = 3
   (1..N).each do |machine_id|
     config.vm.define "condor-#{machine_id}" do |machine|
       machine.vm.hostname = "condor-#{machine_id}"

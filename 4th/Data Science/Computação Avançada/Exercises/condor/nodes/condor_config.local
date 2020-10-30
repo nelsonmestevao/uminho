@@ -1,0 +1,26 @@
+use ROLE:  Execute
+CONDOR_HOST = 10.0.0.21
+################################################################################
+# Enable security
+#use SECURITY: Strong
+use SECURITY: HOST_BASED
+
+# By default, must authenticate via filesystem or pool password
+#SEC_DEFAULT_AUTHENTICATION_METHODS = FS, PASSWORD
+# Allow READ level access (e.g. condor_status) with ANONYMOUS authentication
+#SEC_READ_AUTHENTICATION_METHODS = $(SEC_DEFAULT_AUTHENTICATION_METHODS), ANONYMOUS
+# Have tools like condor_status attempt ANONYMOUS authentication.  so that
+# condor_status will work from any machine in the pool.
+#SEC_CLIENT_AUTHENTICATION_METHODS = $(SEC_DEFAULT_AUTHENTICATION_METHODS), ANONYMOUS
+
+#SEC_PASSWORD_FILE = /etc/condor/poolpassword
+
+ALLOW_ADMINISTRATOR = 10.0.0.21
+ALLOW_DAEMON = *
+ALLOW_WRITE = *
+ALLOW_ADVERTISE_MASTER = *
+ALLOW_NEGOTIATOR = $(CONDOR_HOST)
+ALLOW_READ = *
+
+BIND_ALL_INTERFACES=FALSE
+
