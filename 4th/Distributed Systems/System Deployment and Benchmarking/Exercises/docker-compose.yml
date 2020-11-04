@@ -1,0 +1,9 @@
+version: "3"
+services:
+  db:
+    build: .
+    ports:
+      - "8080:8080"
+    # volumes:
+      # - myapps:/apache-tomcat-7.0.55/webapps/
+
