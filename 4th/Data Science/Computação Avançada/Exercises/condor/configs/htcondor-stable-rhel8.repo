@@ -1,0 +1,6 @@
+[htcondor-stable]
+name=HTCondor Stable RPM Repository for Redhat Enterprise Linux 8
+baseurl=https://research.cs.wisc.edu/htcondor/yum/stable/8.8/rhel8
+enabled=1
+gpgcheck=1
+priority=90

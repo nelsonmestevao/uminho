@@ -1,0 +1,162 @@
+---
+
+- hosts: all
+  become: yes
+  become_user: root
+  tasks:
+   - name: install python
+     dnf:
+       name: python3
+
+   - name:  install ansible
+     dnf:
+       name: centos-release-ansible-29
+       state: latest
+
+   - name:  install wget
+     dnf:
+       name: wget
+       state: latest
+
+   - name: setup condor repo
+     copy:
+       src: configs/htcondor-stable-rhel8.repo
+       dest: /etc/yum.repos.d/
+       owner: root
+       group: root
+
+   - name: copy key
+     copy:
+       src: configs/RPM-GPG-KEY-HTCondor
+       dest: /etc/yum.repos.d/
+       owner: root
+       group: root
+
+   - name: install key
+     command:
+       cmd: rpm --import /etc/yum.repos.d/RPM-GPG-KEY-HTCondor
+       warn: false
+
+   - name: install net-tools
+     yum:
+       name: net-tools
+       state: latest
+
+   - name: install condor
+     yum:
+       name: condor
+       state: latest
+
+   - name: install yum utils
+     yum:
+       name: yum-utils
+       state: latest
+
+   - name: Add docker repository
+     command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+   - name: install docker
+     yum:
+       name:
+         - docker-ce
+         - docker-ce-cli
+         - containerd.io
+       state: latest
+
+   - name: firewall
+     systemd:
+       name: firewalld
+       state: stopped
+       enabled: no
+
+   - name: /etc/selinux/config
+     copy:
+       src: configs/selinux
+       dest: /etc/selinux/config
+       owner: root
+       group: root
+
+
+   - name: /etc/hosts
+     copy:
+       src: configs/hosts
+       dest: /etc/hosts
+       owner: root
+       group: root
+
+- hosts:
+  - 'condor-1'
+  become: yes
+  tasks:
+    - name: condor_config
+      copy:
+        src: configs/master/condor_config
+        dest: /etc/condor/condor_config
+        owner: root
+        group: root
+
+    - name: condor_config local
+      copy:
+        src: configs/master/condor_config.local
+        dest: /etc/condor/config.d/
+        owner: root
+        group: root
+
+- hosts:
+  - 'condor-2'
+  become: yes
+  tasks:
+    - name: condor_config
+      copy:
+        src: configs/nodes/condor_config
+        dest: /etc/condor/condor_config
+        owner: root
+        group: root
+
+    - name: condor_config local
+      template:
+          src: configs/nodes/condor_config.local
+          dest: /etc/condor/config.d/condor_config.local
+          owner: root
+          group: root
+      vars:
+        ip: "10.0.0.22"
+
+
+
+- hosts:
+  - 'condor-3'
+  become: yes
+  tasks:
+    - name: condor_config
+      copy:
+        src: configs/nodes/condor_config
+        dest: /etc/condor/condor_config
+        owner: root
+        group: root
+
+    - name: condor_config local
+      template:
+          src: configs/nodes/condor_config.local
+          dest: /etc/condor/config.d/condor_config.local
+          owner: root
+          group: root
+      vars:
+        ip: "10.0.0.23"
+
+
+- hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: start condor
+      systemd:
+         name: condor
+         state: restarted
+         enabled: yes
+
+    - name: start cdocker
+      systemd:
+         name: docker
+         state: restarted
+         enabled: yes
