@@ -1,0 +1,37 @@
+- hosts: all
+  tasks:
+    - name: Update all packages to their latest version
+      become: yes
+      apt:
+        name: "*"
+        state: latest
+
+    - name: Install extra base packages
+      become: yes
+      apt:
+        pkg:
+          - cowsay
+          - vim-nox
+          - openntpd
+          - sudo
+
+- hosts: testing
+  vars:
+    username: tester
+    my_keys: https://github.com/nelsonmestevao.keys
+  tasks:
+    - name: Create tester user
+      become: yes
+      user:
+        name: "{{ username }}"
+        password: '$6$EgOFYaTtzJjRZuKH$t85XCENFstjzwKcvJDJPkrVmfSjM6wYO7dW9LXtg4Drgt1rMCizNy6YH6edop2qUJFviR9PUnE5OTm8LbuNsY0'
+        groups:
+         - sudo
+        state: present
+    - name: Set authorized keys
+      become: yes
+      ansible.posix.authorized_key:
+        user: "{{ username }}"
+        state: present
+        key: "{{ my_keys }}"
+
