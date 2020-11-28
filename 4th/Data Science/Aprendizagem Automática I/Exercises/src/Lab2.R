@@ -62,7 +62,7 @@ persp(x,y,fa,theta=30,phi=40)
 #fix(Auto)
 #Auto=read.table("Auto.data",header=T,na.strings="?")
 #fix(Auto)
-Auto=read.csv("Auto.csv",header=T,na.strings="?")
+Auto=read.csv("data/Auto.csv",header=T,na.strings="?")
 fix(Auto)
 dim(Auto)
 Auto[1:4,]
@@ -130,7 +130,7 @@ dim(A)
 # solve(A)    --> Inverse of A where A is a square matrix.
 # y<-eigen(A) --> y$val are the eigenvalues of A
 #                 y$vec are the eigenvectors of A
-# R<-chol(A)  --> Choleski factorization of A. Returns the upper triangular factor, 
+# R<-chol(A)  --> Choleski factorization of A. Returns the upper triangular factor,
 #                 such that R'R = A.
 # cbind(A,B,...)--> Combine matrices(vectors) horizontally. Returns a matrix.
 # rbind(A,B,...)--> Combine matrices(vectors) vertically. Returns a matrix.
@@ -151,8 +151,8 @@ A*I4
 A%*%I4
 
 
-# When a matrix A is multiplied by it’s inverse A^(-1), the result is the identity matrix I. 
-# Only square matrices have inverses, and its determinant must be different from zero. 
+# When a matrix A is multiplied by it’s inverse A^(-1), the result is the identity matrix I.
+# Only square matrices have inverses, and its determinant must be different from zero.
 solve(A)
 det(A)
 A <- matrix( c(5, 1, 0,
@@ -164,19 +164,19 @@ A%*%solve(A)
 
 
 # EIGENVALUES EIGENVECTORS
-# An eigenvalue of a matrix A is something you can multiply some vector X by, and get the same 
+# An eigenvalue of a matrix A is something you can multiply some vector X by, and get the same
 # answer you would if you multiplied A and X. In this situation, the vector X is an eigenvector.
 #
 # More formally -
-# Definition: Let A be an n x n matrix. A scalar λ is called an eigenvalue of A if there is a 
-# nonzero vector X such that AX = λX. Such a vector X is called an eigenvector of A 
+# Definition: Let A be an n x n matrix. A scalar λ is called an eigenvalue of A if there is a
+# nonzero vector X such that AX = λX. Such a vector X is called an eigenvector of A
 # corresponding to λ.
 A <- matrix(c(2,-4,-1,-1),nrow=2,byrow=T)
 A
 ev <- eigen(A)
 ev
 
-# The eigenvalues are always returned in decreasing order, and each column of vectors 
+# The eigenvalues are always returned in decreasing order, and each column of vectors
 # corresponds to the elements in values.
 X1 <- ev$vectors[,1]
 X2 <- ev$vectors[,2]
@@ -189,7 +189,7 @@ lambda1*X1
 A%*%X2
 lambda2*X2
 
-# Note - it's important to remember that all multiples of a eigenvector will be an 
+# Note - it's important to remember that all multiples of a eigenvector will be an
 #        eigenvector of A corresponding to it's eigenvalue
 X3 <- 4.123106*X1; X3
 A%*%X3
@@ -202,10 +202,10 @@ X<-cbind(X1,X2)
 solve(X)%*%X
 
 # Singular Value Decomposition
-# SVD is a technique to factorize a matrix, or a way of breaking the matrix up into 
-# three matrices. SVD is used specifically in Principal Component Analysis. 
+# SVD is a technique to factorize a matrix, or a way of breaking the matrix up into
+# three matrices. SVD is used specifically in Principal Component Analysis.
 #
 # IMPORTANT:
-# Eigenvalues in the SVD can help you determine which features are redundant, and 
+# Eigenvalues in the SVD can help you determine which features are redundant, and
 # therefore reduce dimensionality!
 

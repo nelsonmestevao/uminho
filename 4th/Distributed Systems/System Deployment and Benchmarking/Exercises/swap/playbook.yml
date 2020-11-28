@@ -1,0 +1,40 @@
+- hosts: all
+  tasks:
+    - name: Update all packages to their latest version
+      become: yes
+      apt:
+        name: "*"
+        state: latest
+
+- hosts: database
+  tasks:
+    - name: Install Python
+      become: yes
+      apt:
+        name: python3
+        state: present
+    - name: Install Python package manager
+      become: yes
+      apt:
+        name: python3-pip
+    - name: Install python dependencies
+      pip:
+        name: pymysql
+        executable: pip3
+    - name: Install the MySQL database
+      become: yes
+      apt:
+        name: mysql-server
+        state: present
+    - name: Create a new database with name 'swap'
+      community.mysql.mysql_db:
+        name: swap
+        state: present
+    - name: Create user with password, all database privileges and 'WITH GRANT OPTION' in swap
+      community.mysql.mysql_user:
+        state: present
+        name: nelsonmestevao
+        password: 12345
+        priv:
+          'swap.*': 'ALL,GRANT'
+

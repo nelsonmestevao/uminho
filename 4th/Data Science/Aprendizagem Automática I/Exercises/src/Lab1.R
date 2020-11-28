@@ -23,14 +23,14 @@ summary(gender)
 table(gender)
 table(month)
 table(gender,month)
-barplot(table(gender,month), beside=T,
-        legend.text=c("fem","male"),
-        main= "Distribution of birth months per gender",
+barplot(table(gender,month), beside=T, 
+        legend.text=c("fem","male"), 
+        main= "Distribution of birth months per gender", 
         xlab="month", ylab="frequency")
 
 
 #
-beer <- c(3, 4, 1, 1, 3, 4, 3, 3, 1, 3, 2, 1, 2, 1, 2, 3,
+beer <- c(3, 4, 1, 1, 3, 4, 3, 3, 1, 3, 2, 1, 2, 1, 2, 3, 
           2, 3, 1, 1, 1, 1, 4, 3, 1)
 barplot(beer)  # NO, this isn’t correct
 barplot(table(beer))
@@ -50,11 +50,11 @@ stem(eruptions, scale=0.5)
 
 par(mfrow=c(1,2))
 hist(eruptions, breaks=seq(from=1.05, to=6, by=1/4), freq=F,
-     main="Histogram for eruptions",
+     main="Histogram for eruptions", 
      xlab = "duration (min)", ylab = "frequency")
 er.small <- eruptions[eruptions<3]
 summary(er.small)
-boxplot(er.small, main="Boxplot for small eruptions",
+boxplot(er.small, main="Boxplot for small eruptions", 
         ylim=range(1.5,5.1), ylab="duration (min)")
 
 
@@ -80,7 +80,7 @@ cor(Orange$age, Orange$circumference) #default is Pearson coefficient
 
 #
 quality <- 1:10
-SO2 <- c(0.9,2.7,1.8,2.9,3.5,3.1,3.7,3.3,4.9,4.7)
+SO2 <- c(0.9,2.7,1.8,2.9,3.5,3.1,3.7,3.3,4.9,4.7) 
 cor(quality, SO2, method="spearman")
 
 
@@ -113,7 +113,7 @@ priceCat
 levels(priceCat) <- c("cheap","okay","expensive")
 priceCat
 
-mpgCat <- cut(MPG.highway,c(0,20,30,max(MPG.highway)))
+mpgCat <- cut(MPG.highway,c(0,20,30,max(MPG.highway))) 
 levels(mpgCat) <- c("miser","okay","gas guzzler")
 
 table(Type)
@@ -124,7 +124,7 @@ boxplot(Cars93$Price ~ Cars93$Type)
 
 
 ###################################
-# BINOMIAL
+# BINOMIAL 
 dbinom(2,size=10,prob=0.3)
 rbinom(20,1,0.5)
 rbinom(10,100,0.5)
@@ -151,3 +151,5 @@ text(list(x=-0.1,y=0.14),"N(0,3)")
 allSums <- rep(0,200)
 for (k in 1:200) allSums[k] <- sum(rexp(100,rate=10))
 hist(allSums,freq=F); x <- seq(7,12,0.1); lines(x,dnorm(x,10,1))
+
+
