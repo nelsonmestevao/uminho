@@ -1,0 +1,77 @@
+- name: Add php repository from PPA and install its signing key on Ubuntu target
+  become: yes
+  apt_repository:
+    repo: ppa:ondrej/php
+
+- name: Install app packages
+  become: yes
+  apt:
+    pkg:
+      - php7.4 
+      - php7.4-fpm
+      - php7.4-zip
+      - php7.4-mbstring
+      - php7.4-tokenizer
+      - php7.4-mysql
+      - php7.4-gd
+      - php7.4-xml
+      - php7.4-bcmath
+      - php7.4-intl
+      - php7.4-curl 
+      - nodejs
+      - composer
+      - npm
+    state: latest
+
+- name: Clone Swap repository 
+  git:
+    repo: https://github.com/Hackathonners/swap.git
+    dest: ~/swap
+
+- name: Create Swap configuration file
+  template: 
+    src: envfile
+    dest: ~/swap/.env
+
+#Could use composer and npm ansible modules...
+- name: Install Swap composer
+  shell : composer install
+  args:
+    chdir: ~/swap
+
+- name: Install packages based on package.json.
+  npm:
+    path: ~/swap
+
+- name: Generate key Swap
+  shell: php artisan key:generate
+  args:
+    chdir: ~/swap
+
+- name: Migrate database
+  shell: php artisan migrate
+  ignore_errors: yes
+  args:
+    chdir: ~/swap
+
+- name: Seed database
+  shell: php artisan db:seed
+  ignore_errors: yes
+  args:
+    chdir: ~/swap
+
+#The killall should be improved to a safer command
+- name: Clean previous Swap servers
+  shell: killall -9 php7.4 && killall -9 php
+  ignore_errors: yes
+
+- name: Build the assets
+  shell: npm run production
+  args:
+    chdir: ~/swap
+
+#a more correct approach to this would be to register the service in systemd
+- name: Start Swap server
+  shell: nohup php artisan serve --host=0.0.0.0 --port=8080 > app_out.log 2>&1 &
+  args:
+    chdir: ~/swap

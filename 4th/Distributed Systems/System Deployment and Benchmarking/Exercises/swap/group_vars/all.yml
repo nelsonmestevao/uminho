@@ -1,0 +1,5 @@
+database:
+  name: swap
+  username: test
+  password: 123456
+  internal_ip: 10.128.0.15

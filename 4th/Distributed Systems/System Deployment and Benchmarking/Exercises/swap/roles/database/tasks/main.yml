@@ -1,0 +1,41 @@
+- name: Install Python and its package manager
+  become: yes
+  apt:
+    name: 
+      - python3
+      - python3-pip
+    state: present
+
+- name: Install Python MySQL dependencies
+  become: yes
+  apt:
+    name: python3-mysqldb
+    state: present
+
+- name: Install the MySQL database server
+  become: yes
+  apt:
+    name: mysql-server
+    state: present
+
+- name: Create database with name "{{ database.name }}"
+  become: yes
+  community.mysql.mysql_db:
+    name: "{{ database.name }}"
+    state: present
+
+- name: Cleanup users with same name accounts
+  become: yes
+  community.mysql.mysql_user:
+    name: "{{ database.username }}"
+    host_all: yes
+    state: absent
+
+- name: Create user "{{ database.username }}" with password, all database privileges and 'WITH GRANT OPTION' in "{{ database.name }}"
+  become: yes
+  community.mysql.mysql_user:
+    name: "{{ database.username }}"
+    password: "{{ database.password }}"
+    priv: '*.*:ALL,GRANT'
+    host: '%'
+    state: present
