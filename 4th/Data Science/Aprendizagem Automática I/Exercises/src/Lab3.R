@@ -1,5 +1,6 @@
-
-# Chapter 3 Lab: Linear Regression  
+# ==============================================================================
+# Chapter 3: Linear Regression
+# ==============================================================================
 
 library(MASS)
 library(ISLR)
@@ -22,7 +23,7 @@ coef(lm.fit)
 confint(lm.fit)
 
 summary(medv) # Y response variable
-summary(lstat) # X predictor/regressor/independent/explanatory variable 
+summary(lstat) # X predictor/regressor/independent/explanatory variable
 #predict(lm.fit,data.frame(lstat=(c(5,10,15))), interval="confidence")
 # IMPORTANT: predict Y for a given X0
 predict(lm.fit,data.frame(lstat=(c(5,10,15))), interval="prediction")
@@ -44,7 +45,7 @@ which.max(hatvalues(lm.fit))
 plot(lstat,medv, cex=0.6)
 points(lstat[375],medv[375], col="red", pch="+", cex=1.2)
 abline(lm.fit)
-# On the basis of the residual plots, there is some evidence of non-linearity 
+# On the basis of the residual plots, there is some evidence of non-linearity
 
 # MODELO QUADRÁTICO
 m2<-lm(medv~lstat+I(lstat^2))
@@ -89,8 +90,8 @@ lm.fit2=lm(medv~lstat+I(lstat^2))
 summary(lm.fit2)
 lm.fit=lm(medv~lstat)
 #IMPORTANT: compares two models M1 and M2
-# H0: M1 is equivalent to M2 versus H1: Full Model (M2) is superior 
-anova(lm.fit,lm.fit2)  
+# H0: M1 is equivalent to M2 versus H1: Full Model (M2) is superior
+anova(lm.fit,lm.fit2)
 
 par(mfrow=c(2,2))
 plot(lm.fit2)
@@ -102,7 +103,7 @@ summary(lm.fit5)
 
 
 ########################
-# Qualitative Predictors 
+# Qualitative Predictors
 
 # Carseats: Information about car seat sales in 400 stores
 ?Carseats
