@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+bin/mvnw clean compile package
