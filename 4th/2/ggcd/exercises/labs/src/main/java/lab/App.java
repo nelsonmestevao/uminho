@@ -28,6 +28,7 @@ public final class App {
 
         try {
             Lab0.getTopTenPopularGenres(this.file);
+            Lab1.getTopTenPopularGenres(this.file);
         } catch (Exception e) {
             e.printStackTrace();
         }
