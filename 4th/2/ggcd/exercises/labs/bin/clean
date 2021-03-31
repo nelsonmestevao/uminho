@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+bin/mvnw clean
+sudo rm -rf data/out
