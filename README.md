@@ -89,8 +89,8 @@ In addition to all the help from contributors to each of the projects, many
 other people had a positive impact on my academic journey. This list tries to
 mention the most decisive ones by alphabetical order.
 
-- [Catarina Machado][catarina]
 - [Beatriz Rocha][bia]
+- [Catarina Machado][catarina]
 - [Daniel Tinoco][tinoco]
 - [Fernando Mendes][frm]
 - [Francisco Lira][lira]
@@ -98,8 +98,8 @@ mention the most decisive ones by alphabetical order.
 - [João Vilaça][vilaça]
 - [Pedro Mendes][mendess]
 
-[catarina]: https://github.com/catarinamachado
 [bia]: https://github.com/beatrizfrocha
+[catarina]: https://github.com/catarinamachado
 [frm]: https://github.com/frm
 [lira]: https://github.com/FranciscoLira
 [mendess]: https://github.com/mendess
