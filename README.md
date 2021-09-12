@@ -1,4 +1,4 @@
-[gitbook]: https://books.estevao.xyz/uminho
+[gitbook]: https://books.estevao.org/uminho
 
 <div align="center">
   <img src="https://www.eng.uminho.pt/SiteAssets/Logo.PNG" alt="University of Minho">
@@ -96,12 +96,14 @@ mention the most decisive ones by alphabetical order.
 - [Francisco Lira][lira]
 - [José Pedro Resende][resende]
 - [João Vilaça][vilaça]
+- [Martinho Aragão][martinho]
 - [Pedro Mendes][mendess]
 
 [bia]: https://github.com/beatrizfrocha
 [catarina]: https://github.com/catarinamachado
 [frm]: https://github.com/frm
 [lira]: https://github.com/FranciscoLira
+[martinho]: https://github.com/martinhoaragao
 [mendess]: https://github.com/mendess
 [resende]: https://github.com/ZePedroResende
 [tinoco]: https://github.com/0urobor0s
