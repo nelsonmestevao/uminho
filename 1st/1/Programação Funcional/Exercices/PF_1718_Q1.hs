@@ -11,10 +11,10 @@ import Data.List
 --------------------------------------------------------------------------------
 -- Questão 1 --
 --------------------------------------------------------------------------------
-myenumFromTo :: Int -> Int -> [Int]
-myenumFromTo x y
+enumFromTo' :: Int -> Int -> [Int]
+enumFromTo' x y
   | x >= y = [y]
-  | x < y = x : myenumFromTo (x + 1) y
+  | x < y = x : enumFromTo' (x + 1) y
 
 --------------------------------------------------------------------------------
 -- Questão 2 --
@@ -74,9 +74,9 @@ myzip _ _ = []
 --------------------------------------------------------------------------------
 -- Questão 9 --
 --------------------------------------------------------------------------------
-myelem :: Eq a => a -> [a] -> Bool
-myelem e [] = False
-myelem e (x:xs) = e == x || myelem e xs
+elem' :: Eq a => a -> [a] -> Bool
+elem' _ [] = False
+elem' e (x:xs) = e == x || elem' e xs
 
 --------------------------------------------------------------------------------
 -- Questão 10 --
@@ -95,21 +95,21 @@ myintersperse n (x:xs) = x : n : myintersperse n xs
 --------------------------------------------------------------------------------
 -- Questão 12 --
 --------------------------------------------------------------------------------
-mygroup :: Eq a => [a] -> [[a]]
-mygroup [] = [[]]
-mygroup (h:t) = aux [h] t
+group' :: Eq a => [a] -> [[a]]
+group' [] = [[]]
+group' (h:t) = aux [h] t
   where
     aux a [] = [a]
     aux a (h:t)
-      | elem h a = aux (h : a) t
+      | h `elem` a = aux (h : a) t
       | otherwise = a : aux [h] t
 
 --------------------------------------------------------------------------------
 -- Questão 13 --
 --------------------------------------------------------------------------------
-myconcat :: [[a]] -> [a]
-myconcat [] = []
-myconcat (x:xs) = x ++ myconcat xs
+concat' :: [[a]] -> [a]
+concat' [] = []
+concat' (x:xs) = x ++ concat' xs
 
 --------------------------------------------------------------------------------
 -- Questão 14 --
@@ -121,29 +121,24 @@ myinits l = myinits (init l) ++ [l]
 --------------------------------------------------------------------------------
 -- Questão 15 --
 --------------------------------------------------------------------------------
-mytails :: [a] -> [[a]]
-mytails [] = [[]]
-mytails l = [l] ++ mytails (tail l)
+tails' :: [a] -> [[a]]
+tails' [] = [[]]
+tails' l = l : tails' (tail l)
 
 --------------------------------------------------------------------------------
 -- Questão 16 --
 --------------------------------------------------------------------------------
-myisPrefixOf :: Eq a => [a] -> [a] -> Bool
-myisPrefixOf [] _ = True
-myisPrefixOf (x:xs) (y:ys) =
-  if x == y
-    then myisPrefixOf xs ys
-    else False
+isPrefixOf' :: Eq a => [a] -> [a] -> Bool
+isPrefixOf' [] _ = True
+isPrefixOf' _ [] = False
+isPrefixOf' (x:xs) (y:ys) = (x == y) && isPrefixOf' xs ys
 
 --------------------------------------------------------------------------------
 -- Questão 17 --
 --------------------------------------------------------------------------------
 myisSuffixOf :: Eq a => [a] -> [a] -> Bool
 myisSuffixOf [] _ = True
-myisSuffixOf l1 l2 =
-  if (last l1) == (last l2)
-    then myisSuffixOf (init l1) (init l2)
-    else False
+myisSuffixOf l1 l2 = (last l1 == last l2) && myisSuffixOf (init l1) (init l2)
 
 --------------------------------------------------------------------------------
 -- Questão 18 --
@@ -159,10 +154,11 @@ myisSubsequenceOf (x:xs) (y:ys) =
 --------------------------------------------------------------------------------
 -- Questão 19 --
 --------------------------------------------------------------------------------
-myelemIndices :: Eq a => a -> [a] -> [Int]
-myelemIndices _ [] = []
-myelemIndices x l = aux 0 x l
+elemIndices' :: Eq a => a -> [a] -> [Int]
+elemIndices' _ [] = []
+elemIndices' x l = aux 0 x l
   where
+    aux :: Eq a => Int -> a -> [a] -> [Int]
     aux _ _ [] = []
     aux i x (h:t) =
       if x == h
@@ -172,15 +168,14 @@ myelemIndices x l = aux 0 x l
 --------------------------------------------------------------------------------
 -- Questão 20 --
 --------------------------------------------------------------------------------
-mynub :: Eq a => [a] -> [a]
-mynub [] = []
-mynub (h:t) = h : mynub (aux h t)
+nub' :: Eq a => [a] -> [a]
+nub' (h:t) = h : nub' (aux h t)
   where
+    aux :: Eq a => a -> [a] -> [a]
     aux _ [] = []
-    aux x (y:ys) =
-      if x == y
-        then aux x ys
-        else y : aux x ys
+    aux x (y:ys)
+      | x == y = aux x ys
+      | otherwise = y : aux x ys
 
 --------------------------------------------------------------------------------
 -- Questão 21 --
@@ -348,7 +343,7 @@ converteMSet [] = []
 converteMSet ((y, n):ys) = aux (y, n) ++ converteMSet ys
   where
     aux (y, 0) = []
-    aux (y, n) = [y] ++ aux (y, n - 1)
+    aux (y, n) = y : aux (y, n - 1)
 
 --------------------------------------------------------------------------------
 -- Questão 39 --
@@ -356,7 +351,7 @@ converteMSet ((y, n):ys) = aux (y, n) ++ converteMSet ys
 insereMSet :: Eq a => a -> [(a, Int)] -> [(a, Int)]
 insereMSet e [] = [(e, 1)]
 insereMSet e ((y, n):ys)
-  | e == y = ((y, n + 1) : ys)
+  | e == y = (y, n + 1) : ys
   | otherwise = (y, n) : insereMSet e ys
 
 --------------------------------------------------------------------------------
@@ -365,7 +360,7 @@ insereMSet e ((y, n):ys)
 removeMSet :: Eq a => a -> [(a, Int)] -> [(a, Int)]
 removeMSet _ [] = []
 removeMSet e ((y, n):ys)
-  | (e == y) && (n > 1) = ((y, n - 1) : ys)
+  | (e == y) && (n > 1) = (y, n - 1) : ys
   | (e == y) && (n == 1) = ys
   | otherwise = (y, n) : removeMSet e ys
 
@@ -373,7 +368,7 @@ removeMSet e ((y, n):ys)
 -- Questão 41 --
 --------------------------------------------------------------------------------
 constroiMSet :: Ord a => [a] -> [(a, Int)]
-constroiMSet l = aux 1 l
+constroiMSet = aux 1
   where
     aux i [x] = [(x, i)]
     aux i (x:y:xs)
@@ -424,10 +419,10 @@ posicao (x, y) (Oeste:r) = posicao (x - 1, y) r
 caminho :: (Int, Int) -> (Int, Int) -> [Movimento]
 caminho (x1, y1) (x2, y2)
   | x1 == x2 && y1 == y2 = []
-  | x1 < x2 = [Este] ++ caminho (x1 + 1, y1) (x2, y2)
-  | x1 > x2 = [Oeste] ++ caminho (x1, y1) (x2 + 1, y2)
-  | y1 < y2 = [Norte] ++ caminho (x1, y1 + 1) (x2, y2)
-  | y1 > y2 = [Sul] ++ caminho (x1, y1) (x2, y2 + 1)
+  | x1 < x2 = Este : caminho (x1 + 1, y1) (x2, y2)
+  | x1 > x2 = Oeste : caminho (x1, y1) (x2 + 1, y2)
+  | y1 < y2 = Norte : caminho (x1, y1 + 1) (x2, y2)
+  | y1 > y2 = Sul : caminho (x1, y1) (x2, y2 + 1)
 
 --------------------------------------------------------------------------------
 -- Questão 46 --
@@ -462,7 +457,7 @@ vizinhos (Pos x y) ((Pos z w):t) =
   if (y == w && x == (z + 1)) ||
      (y == w && x == (z - 1)) ||
      (x == z && y == (w + 1)) || (x == z && y == (w - 1))
-    then (Pos z w) : vizinhos (Pos x y) t
+    then Pos z w : vizinhos (Pos x y) t
     else vizinhos (Pos x y) t
 
 --------------------------------------------------------------------------------
@@ -470,10 +465,7 @@ vizinhos (Pos x y) ((Pos z w):t) =
 --------------------------------------------------------------------------------
 mesmaOrdenada :: [Posicao] -> Bool
 mesmaOrdenada [x] = True
-mesmaOrdenada ((Pos x y):(Pos z w):t) =
-  if y == w
-    then mesmaOrdenada ((Pos z w) : t)
-    else False
+mesmaOrdenada ((Pos x y):(Pos z w):t) = (y == w) && mesmaOrdenada (Pos z w : t)
 
 --------------------------------------------------------------------------------
 -- Questão 50 --
