@@ -22,8 +22,8 @@ share songs among them. The client as an interactive shell for ease of use.
 [hugo-pic]: https://github.com/HugoCarvalho99.png?size=120
 [nelson]: https://github.com/nelsonmestevao
 [nelson-pic]: https://github.com/nelsonmestevao.png?size=120
-[pedro]: https://github.com/pedroribeiro22
-[pedro-pic]: https://github.com/pedroribeiro22.png?size=120
+[pedro]: https://github.com/pedroagribeiro
+[pedro-pic]: https://github.com/pedroagribeiro.png?size=120
 [rui]: https://github.com/ruimendes29
 [rui-pic]: https://github.com/ruimendes29.png?size=120
 

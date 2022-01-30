@@ -79,7 +79,7 @@ if you clone the repository. I hope you find it useful somehow.
 
 [hugo]: https://github.com/HugoCarvalho99
 [nelson]: https://github.com/nelsonmestevao
-[pedro]: https://github.com/pedroribeiro22
+[pedro]: https://github.com/pedroagribeiro
 [ricardo]: https://github.com/ricardoslv
 [rui]: https://github.com/ruimendes29
 
